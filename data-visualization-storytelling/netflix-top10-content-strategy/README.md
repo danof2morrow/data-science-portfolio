@@ -25,3 +25,9 @@ The project examines:
 ## Project Files
 
 - Final presentation/report — completed visual analysis and recommendations
+
+## Open the Artifacts
+
+- [netflix_top10_content_strategy_presentation.pptx](netflix_top10_content_strategy_presentation.pptx)
+
+[Portfolio](../../index.html) · [Repository guide](../../README.md)

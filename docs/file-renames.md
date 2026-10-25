@@ -1,0 +1,20 @@
+# Artifact Rename Record
+
+Every moved notebook, report, and presentation retains its original SHA-256 digest. No artifact contents were edited.
+
+| Original path | Current path | SHA-256 |
+|---|---|---|
+| `DSC670_week5_Morrow_D.ipynb` | `generative-ai/lord-of-the-rings-rag/lord_of_the_rings_rag.ipynb` | `4c93bdb5f94fef5885dc7296c507ac37d29f2dfe97321b08b3f0d01bb243df0f` |
+| `business-analytics/dodgers-attendance-promotion-strategy/DSC630_week_3_morrow_d.ipynb` | `business-analytics/dodgers-attendance-promotion-strategy/dodgers_attendance_promotion_strategy.ipynb` | `969eabe440dd53c2c74dd69acc1b00f72616ec654e499eca37888c351a00dbd4` |
+| `predictive-analytics/commercial-fleet-ev-suitability/DSC630_Final_Project_Morrow_D.pdf` | `predictive-analytics/commercial-fleet-ev-suitability/commercial_fleet_ev_suitability_report.pdf` | `8f5c226b0ec6a438f0d4fe1436c39ada3ee6a74817806ce25e6f59f139ba71af` |
+| `predictive-analytics/commercial-fleet-ev-suitability/DSC630_Milestone_4_morrow_4.ipynb` | `predictive-analytics/commercial-fleet-ev-suitability/commercial_fleet_ev_suitability.ipynb` | `c33cd30b627cfecd028c6dc980e2c59b02be586cc739d3fdc079b2de6697ace3` |
+| `data-wrangling/what-determines-movie-success/DSC540_milestone_5_morrow_d.ipynb` | `data-wrangling/what-determines-movie-success/what_determines_movie_success.ipynb` | `593dfd25c987a44380526403d704dddb56cb3bb5ade9180920bf87fe6036b51c` |
+| `generative-ai/commercial-fleet-ev-incentive-assistant/DSC670_Milestone2_Morrow_D.pdf` | `generative-ai/commercial-fleet-ev-incentive-assistant/commercial_fleet_ev_incentive_assistant_report.pdf` | `3c2dda365fa15862240f25f500f0a834125a2a126a78203a24ef944e7f8d807d` |
+| `generative-ai/commercial-fleet-ev-incentive-assistant/DSC670_Milestone2_Morrow_D.ipynb` | `generative-ai/commercial-fleet-ev-incentive-assistant/commercial_fleet_ev_incentive_assistant.ipynb` | `784cde8b80bb5d99a8479c7d5c8c01881d05f7210a2b07f3fd11d113e98a8fe1` |
+| `data-visualization-storytelling/childcare-affordability-workforce-impact/DSC640_Milestone_5_Morrow_D.pdf` | `data-visualization-storytelling/childcare-affordability-workforce-impact/childcare_affordability_workforce_impact_report.pdf` | `4dd3912dafc93102c351b491bd185cd89bc78b4cdfe7f609766dac6edb5b7c15` |
+| `data-visualization-storytelling/childcare-affordability-workforce-impact/DSC640_MIlestone_5_Morrow_d.ipynb` | `data-visualization-storytelling/childcare-affordability-workforce-impact/childcare_affordability_workforce_impact.ipynb` | `1ec74453f4eaea8d29152f9774125732e7d198851d921d9e7f108a8cdb9425a6` |
+| `data-visualization-storytelling/netflix-top10-content-strategy/DSC640_week_1&2_morrow_d.pptx` | `data-visualization-storytelling/netflix-top10-content-strategy/netflix_top10_content_strategy_presentation.pptx` | `53cd3dfd043c7f95777ca5fc7df6a6c4a3b7728707c3bc09235512c8f2ba4917` |
+| `natural-language-processing/movie-review-sentiment-analysis/DSC550_week_3_morrow_d.ipynb` | `natural-language-processing/movie-review-sentiment-analysis/movie_review_sentiment_analysis.ipynb` | `78891016a12100641e9618723a53881ded344871cf78ebd585f476f5c73f6552` |
+| `applied-data-science/applied-data-science/level2-charging-infrastructure-planning/DSC680_Milestone3_Presentation_Morrow_D.pptx` | `applied-data-science/level2-charging-infrastructure-planning/level2_charging_infrastructure_planning_presentation.pptx` | `843b32c42b551a75315b408f8cda286350239e76a1cb39c4189c965858bdddd4` |
+| `applied-data-science/applied-data-science/level2-charging-infrastructure-planning/DSC680_Milestone3_Morrow_D.ipynb` | `applied-data-science/level2-charging-infrastructure-planning/level2_charging_infrastructure_planning.ipynb` | `fa7e2f39ba4598d8f979d6dfbf229368cdbc1e2ae5895cfa0a124ae535f9d43a` |
+| `applied-data-science/applied-data-science/level2-charging-infrastructure-planning/DSC680_Milestone3_WhitePaper_Morrow_D.pdf` | `applied-data-science/level2-charging-infrastructure-planning/level2_charging_infrastructure_planning_report.pdf` | `abef1d6d135e88ea1050a7794aa51034e1007510c1d6c3d322724416f726177d` |

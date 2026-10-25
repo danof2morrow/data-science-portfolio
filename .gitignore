@@ -1,0 +1,10 @@
+.ipynb_checkpoints/
+__pycache__/
+.DS_Store
+
+# Local credentials and environment settings
+.env
+.env.*
+
+# Generated charging-analysis output; original inputs are supplied separately
+applied-data-science/level2-charging-infrastructure-planning/figures_operationally_suited/

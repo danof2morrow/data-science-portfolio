@@ -1,7 +1,9 @@
-# Applied Data Science Project 3
+# Applied Project 3
 
-## Project Status
+Status: planned.
 
-Planned.
+Reserved for the third applied project. Topic, dataset, methods, results, and completed artifacts will be added when the project is ready.
 
-This project will be developed as part of the current applied data science coursework. The project topic, data, methods, and final deliverables will be added as the work is completed.
+This entry is a portfolio planning placeholder and does not represent a completed project.
+
+[Portfolio](../../index.html) · [Repository guide](../../README.md)

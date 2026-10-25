@@ -59,3 +59,15 @@ Both the bag-of-words and TF-IDF matrices contain 25,000 rows and 49,642 text fe
 TextBlob and VADER are prebuilt sentiment analyzers rather than models trained specifically on this movie review dataset.
 
 The preprocessing portion prepares the text for a custom machine learning model, but this project does not train that custom classifier.
+
+## Open the Artifacts
+
+- [movie_review_sentiment_analysis.ipynb](movie_review_sentiment_analysis.ipynb)
+
+## Reproduce the Analysis
+
+Place the original `labeledTrainData.tsv` beside the notebook. Use Python, pandas, TextBlob, NLTK, and scikit-learn. Install the NLTK `vader_lexicon` and `stopwords` resources before running.
+
+Open Jupyter from this project folder and restart the kernel before running all cells in order. Original source data is not bundled in this repository. See [validation status](../../docs/validation.md) for the current execution limits. Existing code, markdown, and saved outputs in the notebook are preserved.
+
+[Portfolio](../../index.html) · [Repository guide](../../README.md)

@@ -82,3 +82,16 @@ A fleet should use the results as the first stage of a broader electrification a
 ## Next Step
 
 Vehicles identified as stronger operational candidates should move into a more detailed assessment that includes charging requirements, infrastructure costs, vehicle-specific energy use, and site conditions.
+
+## Open the Artifacts
+
+- [commercial_fleet_ev_suitability.ipynb](commercial_fleet_ev_suitability.ipynb)
+- [commercial_fleet_ev_suitability_report.pdf](commercial_fleet_ev_suitability_report.pdf)
+
+## Reproduce the Analysis
+
+Place the original Fleet DNA CSV or Excel file beside the notebook; its filename must contain `fleet` or `dna`. Use Python, pandas, NumPy, Matplotlib, seaborn, scikit-learn, and openpyxl for Excel inputs. **The saved notebook references undefined state**, including `negative_stop_count`, `stop_duration_cap`, `model_ready`, model objects, and evaluation variables. Recover the complete original notebook before claiming a clean run. No code was added to reconstruct those missing steps.
+
+Open Jupyter from this project folder and restart the kernel before running all cells in order. Original source data is not bundled in this repository. See [validation status](../../docs/validation.md) for the current execution limits. Existing code, markdown, and saved outputs in the notebook are preserved.
+
+[Portfolio](../../index.html) · [Repository guide](../../README.md)

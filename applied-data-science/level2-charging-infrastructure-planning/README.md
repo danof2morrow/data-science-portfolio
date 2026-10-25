@@ -89,3 +89,17 @@ DC fast charging is outside the scope of this analysis.
 The framework can help a fleet identify which depots appear supportable with Level 2 charging and which locations need additional investigation.
 
 Deployments that pass the screening can move into more detailed site assessment, while constrained sites may require changes such as longer charging windows, managed charging, staggered schedules, or additional electrical planning.
+
+## Open the Artifacts
+
+- [level2_charging_infrastructure_planning.ipynb](level2_charging_infrastructure_planning.ipynb)
+- [level2_charging_infrastructure_planning_presentation.pptx](level2_charging_infrastructure_planning_presentation.pptx)
+- [level2_charging_infrastructure_planning_report.pdf](level2_charging_infrastructure_planning_report.pdf)
+
+## Reproduce the Analysis
+
+Use Python, pandas, NumPy, Matplotlib, and seaborn. The notebook checks for a local Fleet DNA composite CSV, then attempts the official download. If downloading is blocked, place the original file at `data/fleet_dna_composite.csv` beside the notebook. Run from the project folder; generated charts are written to `figures_operationally_suited/`.
+
+Open Jupyter from this project folder and restart the kernel before running all cells in order. Original source data is not bundled in this repository. See [validation status](../../docs/validation.md) for the current execution limits. Existing code, markdown, and saved outputs in the notebook are preserved.
+
+[Portfolio](../../index.html) · [Repository guide](../../README.md)
