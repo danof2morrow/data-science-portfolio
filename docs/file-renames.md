@@ -18,3 +18,12 @@ Every moved notebook, report, and presentation retains its original SHA-256 dige
 | `applied-data-science/applied-data-science/level2-charging-infrastructure-planning/DSC680_Milestone3_Presentation_Morrow_D.pptx` | `applied-data-science/level2-charging-infrastructure-planning/level2_charging_infrastructure_planning_presentation.pptx` | `843b32c42b551a75315b408f8cda286350239e76a1cb39c4189c965858bdddd4` |
 | `applied-data-science/applied-data-science/level2-charging-infrastructure-planning/DSC680_Milestone3_Morrow_D.ipynb` | `applied-data-science/level2-charging-infrastructure-planning/level2_charging_infrastructure_planning.ipynb` | `fa7e2f39ba4598d8f979d6dfbf229368cdbc1e2ae5895cfa0a124ae535f9d43a` |
 | `applied-data-science/applied-data-science/level2-charging-infrastructure-planning/DSC680_Milestone3_WhitePaper_Morrow_D.pdf` | `applied-data-science/level2-charging-infrastructure-planning/level2_charging_infrastructure_planning_report.pdf` | `abef1d6d135e88ea1050a7794aa51034e1007510c1d6c3d322724416f726177d` |
+
+## Additional Source Artifacts
+
+These final source notebooks were imported with descriptive filenames. Original contents are unchanged.
+
+| Source filename | Repository path | SHA-256 |
+|---|---|---|
+| `DSC670_Week6_Fine_Tuning_Morrow_D_Final.ipynb` | `natural-language-processing/fine-tuned-movie-review-sentiment/fine_tuned_movie_review_sentiment.ipynb` | `72b5b812a0cfcdbc19a5253237226baa146b26fbf86a9f98c17e1768e522a15a` |
+| `DSC670_Milestone3_Morrow_D_Revised (1).ipynb` | `generative-ai/commercial-fleet-ev-incentive-assistant/commercial_fleet_ev_incentive_assistant_fine_tuning.ipynb` | `6245ddcf775dbe5bf4d90203816cc2e1ac3144d5b6575dd28305748c7fe55e54` |

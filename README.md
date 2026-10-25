@@ -15,11 +15,11 @@ I connect business questions with data analysis, practical models, and clear com
 | [Netflix Top 10 Content Strategy](data-visualization-storytelling/netflix-top10-content-strategy/README.md) | Visualization · PowerPoint · Storytelling | Presentation available |
 | [What Determines Movie Success?](data-wrangling/what-determines-movie-success/README.md) | Python · SQL · Data integration | Analysis available |
 | [Movie Review Sentiment Analysis](natural-language-processing/movie-review-sentiment-analysis/README.md) | Python · NLP · Text preprocessing | Analysis available |
-| [Commercial Fleet EV Incentive Assistant](generative-ai/commercial-fleet-ev-incentive-assistant/README.md) | Python · Generative AI · Prompt evaluation | In progress |
-| [Applied Project 2](applied-data-science/applied-data-science-project-2/README.md) | Topic to be confirmed | Planned |
-| [Applied Project 3](applied-data-science/applied-data-science-project-3/README.md) | Topic to be confirmed | Planned |
+| [Commercial Fleet EV Incentive Assistant](generative-ai/commercial-fleet-ev-incentive-assistant/README.md) | Python · Generative AI · Full fine-tuning · Evaluation | Evaluated prototype |
+| [Lord of the Rings Question-Answering with RAG](generative-ai/lord-of-the-rings-rag/README.md) | Python · RAG · Embeddings · FAISS | Prototype with saved results |
+| [Fine-Tuning DistilBERT for Movie Review Sentiment](natural-language-processing/fine-tuned-movie-review-sentiment/README.md) | Python · Hugging Face · Fine-tuning · Error analysis | Saved training and test results |
 
-Eight entries contain project artifacts; two are explicitly planned. The incentive assistant remains in progress. [Supporting RAG study](generative-ai/lord-of-the-rings-rag/README.md).
+All ten selected entries contain project artifacts. The incentive assistant combines its prompt-engineering and full fine-tuning stages in one project. Saved results are distinguished from fresh execution checks in the validation record.
 
 ## Repository Conventions
 

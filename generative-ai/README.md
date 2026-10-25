@@ -1,4 +1,4 @@
 # Generative AI
 
-- [Commercial Fleet EV Incentive Assistant](commercial-fleet-ev-incentive-assistant/README.md) — in-progress featured project.
-- [Lord of the Rings RAG study](lord-of-the-rings-rag/README.md) — supporting study.
+- [Commercial Fleet EV Incentive Assistant](commercial-fleet-ev-incentive-assistant/README.md) — prompt experiments, full fine-tuning, and response evaluation.
+- [Lord of the Rings Question-Answering with RAG](lord-of-the-rings-rag/README.md) — retrieval, generation, and failure analysis.

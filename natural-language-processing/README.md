@@ -1,3 +1,4 @@
 # Natural Language Processing
 
-Projects focused on analyzing, classifying, and extracting meaning from text using techniques such as sentiment analysis, text preprocessing, and language-based modeling.
+- [Movie Review Sentiment Analysis and Text Preprocessing](movie-review-sentiment-analysis/README.md) — TextBlob, VADER, bag-of-words, and TF-IDF.
+- [Fine-Tuning DistilBERT for Movie Review Sentiment](fine-tuned-movie-review-sentiment/README.md) — model training, held-out evaluation, and error analysis.
