@@ -29,3 +29,7 @@ Artifact integrity, descriptive filenames, repository organization, and local do
 ## Portfolio Expansion
 
 The RAG study is now featured. The final IMDb fine-tuning notebook and latest revised incentive-assistant fine-tuning notebook were copied without changes; source and repository SHA-256 digests match. JSON structure and saved results were reviewed. All previously tracked notebooks, reports, and presentations also retain their pre-update bytes. No GPU training was repeated as part of this update.
+
+## API-Key Completion Criterion
+
+At Dan's direction, an API key requirement does not by itself leave a portfolio project unfinished when its code is available in a runnable Python file. The Gemini incentive experiments now have an unchanged-code `.py` export, a terminal launcher, a dependency list, and setup commands. Source-cell equality, Python syntax, and the five-request flow are checked with a simulated client. Live API access is not verified without a key. This criterion applies to the Gemini experiment workflow; it does not establish a fresh run of its separate GPU fine-tuning workflow or resolve missing data and missing definitions elsewhere.

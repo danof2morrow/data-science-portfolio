@@ -36,3 +36,20 @@ For full fine-tuning, open the newer notebook in Google Colab with a Tesla T4 or
 Both notebooks and the report are preserved without content changes. See the [validation record](../../docs/validation.md) for fresh-run limits.
 
 [Portfolio](../../index.html) · [Repository](../../README.md)
+
+## Run the API Experiments from Python
+
+The [Python experiment file](commercial_fleet_ev_incentive_assistant.py) contains the original notebook code cells in their original order, without changing their contents. A [terminal launcher](run_incentive_assistant.py) renders the existing Markdown displays as plain text so the model responses are readable outside Jupyter.
+
+From this project folder, run:
+
+```bash
+python -m pip install -r requirements-api.txt
+python run_incentive_assistant.py
+```
+
+Enter your Gemini API key at the hidden prompt. The script makes five model requests using the original notebook's model identifier. Your account must have access to that model, available quota, and internet connectivity. No key is stored in the repository. The original experiment file can also be executed directly with Python, but its Markdown displays are intended for IPython; the launcher provides readable terminal output.
+
+The newer full fine-tuning notebook is a separate Colab GPU/Drive workflow and does not require a Gemini API key.
+
+For this portfolio, a supplied API key is a setup requirement rather than unfinished work. Syntax, source integrity, and the five-request control flow are checked without a live key. A live service run is not claimed; access or quota errors still need to be resolved by the person running it. This exception does not close the missing-data or missing-code issues in other projects.
