@@ -19,3 +19,7 @@ data-visualization-storytelling/childcare-affordability-workforce-impact/*.downl
 
 # Generated SQLite output from the movie integration analysis
 data-wrangling/what-determines-movie-success/movies_project.db
+
+# Sentiment input is downloaded and verified by setup_data.py
+natural-language-processing/movie-review-sentiment-analysis/labeledTrainData.tsv
+natural-language-processing/movie-review-sentiment-analysis/*.download

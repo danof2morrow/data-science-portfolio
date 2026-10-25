@@ -1,0 +1,41 @@
+{
+  "status": "passed",
+  "checked_on": "2026-10-25",
+  "method": "fresh IPython process; unchanged code cells executed sequentially",
+  "nonempty_code_cells": 12,
+  "notebook_sha256": "78891016a12100641e9618723a53881ded344871cf78ebd585f476f5c73f6552",
+  "data_sha256": "200069e26050edf9cc95b47de990094cc24a851772efcae72d4b7c825e382456",
+  "data_source": "https://raw.githubusercontent.com/datarobot-community/movie-rating-app/d0c255ace2fc9e44aa7b026711ac02b042c52e56/resources/labeledTrainData.tsv",
+  "data_source_note": "Public mirror of the Kaggle labeled IMDb training dataset; original local input was unavailable. First five IDs, label counts, and retained evaluation outputs were compared.",
+  "rows": 25000,
+  "label_counts": {
+    "1": 12500,
+    "0": 12500
+  },
+  "first_five_ids": [
+    "5814_8",
+    "2381_9",
+    "7759_3",
+    "3630_4",
+    "9495_8"
+  ],
+  "textblob_accuracy": 0.68524,
+  "vader_accuracy": 0.69356,
+  "bag_of_words_shape": [
+    25000,
+    49642
+  ],
+  "tfidf_shape": [
+    25000,
+    49642
+  ],
+  "elapsed_seconds": 77.0,
+  "versions": {
+    "pandas": "2.2.3",
+    "numpy": "2.3.5",
+    "scikit-learn": "1.8.0",
+    "nltk": "3.10.4",
+    "textblob": "0.20.1",
+    "ipython": "9.17.1"
+  }
+}

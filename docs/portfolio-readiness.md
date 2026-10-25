@@ -34,3 +34,7 @@ All 20 nonempty code cells passed using the original workbook with unchanged not
 ## Movie-Success Execution Review
 
 All 13 nonempty code cells passed with unchanged notebook bytes. Three cleaned input snapshots were recovered from the original SQLite database and are included in the required locations. Setup instructions and join-coverage limits are documented.
+
+## Prebuilt Sentiment Execution Review
+
+All 12 nonempty code cells passed with unchanged notebook bytes, reproducing the saved accuracy scores and feature-matrix dimensions exactly. Dependency instructions and a verified setup helper cover the pinned public dataset copy and official NLTK resources.
