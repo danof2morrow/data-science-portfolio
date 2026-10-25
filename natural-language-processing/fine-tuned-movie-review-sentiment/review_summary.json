@@ -1,0 +1,17 @@
+{
+  "checked_on": "2026-10-25",
+  "status": "saved_gpu_run_reviewed",
+  "source_sha256": "72b5b812a0cfcdbc19a5253237226baa146b26fbf86a9f98c17e1768e522a15a",
+  "syntax_checked_code_cells": 11,
+  "saved_exception_outputs": 0,
+  "required_platform": "Google Colab with CUDA GPU",
+  "cuda_available_in_review_environment": false,
+  "fresh_gpu_training_run": false,
+  "retained_results": {
+    "test_accuracy": 0.884,
+    "macro_f1": 0.884,
+    "test_reviews": 500,
+    "correct_test_reviews": 442
+  },
+  "limits": "Saved training results reviewed; syntax and original code integrity checked. The GPU training and, where required, Drive workflow were not rerun in this CPU environment."
+}

@@ -1,0 +1,37 @@
+{
+  "checked_on": "2026-10-25",
+  "notebook_sha256": "4c93bdb5f94fef5885dc7296c507ac37d29f2dfe97321b08b3f0d01bb243df0f",
+  "method": "fresh IPython process; dependency installation completed separately; scripted input to original interactive loop",
+  "code_cell_indices_completed": [
+    4,
+    7,
+    10,
+    13,
+    16,
+    18,
+    21,
+    24,
+    26,
+    28,
+    30,
+    33
+  ],
+  "status": "passed",
+  "device": "cpu",
+  "chunks": 100,
+  "embedding_shape": [
+    100,
+    384
+  ],
+  "index_vectors": 100,
+  "elapsed_seconds": 101.8,
+  "versions": {
+    "torch": "2.14.1+cpu",
+    "transformers": "5.20.2",
+    "sentence-transformers": "6.2.0",
+    "faiss-cpu": "1.15.1",
+    "beautifulsoup4": "4.15.0",
+    "accelerate": "1.15.0",
+    "requests": "2.34.2"
+  }
+}

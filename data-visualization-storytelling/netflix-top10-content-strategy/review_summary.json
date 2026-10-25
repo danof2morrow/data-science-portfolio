@@ -1,0 +1,10 @@
+{
+  "checked_on": "2026-10-25",
+  "status": "presentation_file_checked",
+  "sha256": "53cd3dfd043c7f95777ca5fc7df6a6c4a3b7728707c3bc09235512c8f2ba4917",
+  "slides": 13,
+  "embedded_images": 14,
+  "zip_integrity": "passed",
+  "internal_relationship_targets": "all present",
+  "review": "Slide text and embedded images inspected; the source is unchanged. No PowerPoint/LibreOffice renderer was available, so full slide layout and font rendering were not verified."
+}

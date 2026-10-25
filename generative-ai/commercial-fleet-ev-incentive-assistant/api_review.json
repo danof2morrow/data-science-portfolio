@@ -1,0 +1,11 @@
+{
+  "checked_on": "2026-10-25",
+  "status": "accepted_api_setup_requirement",
+  "criterion": "User accepts API-key requirement when a runnable Python file and instructions are present.",
+  "notebook_sha256": "784cde8b80bb5d99a8479c7d5c8c01881d05f7210a2b07f3fd11d113e98a8fe1",
+  "python_export_source_matches_notebook": true,
+  "terminal_launcher": "run_incentive_assistant.py",
+  "simulated_api_requests_checked": 5,
+  "fresh_live_api_run": false,
+  "limits": "Syntax, source equality, readable terminal output, five-request flow, and original rebate arithmetic passed with a simulated client. Original model access and account quota are needed for a live run."
+}

@@ -1,0 +1,10 @@
+{
+  "checked_on": "2026-10-25",
+  "status": "passed_at_initial_execution_audit",
+  "method": "unchanged saved code executed sequentially in a fresh Python subprocess; original display fallback and noninteractive Matplotlib",
+  "nonempty_code_cells": 14,
+  "validation_checks_passed": 9,
+  "notebook_sha256": "fa7e2f39ba4598d8f979d6dfbf229368cdbc1e2ae5895cfa0a124ae535f9d43a",
+  "data_sha256": "df5798cc8513e6f896fae5488616e39ba341576c4404c4e182ce3795fc3b9d21",
+  "limits": "Sequential execution succeeded earlier in this portfolio review. A connected Jupyter kernel was not tested. This record does not claim a newly repeated run."
+}

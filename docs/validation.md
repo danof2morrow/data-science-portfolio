@@ -1,55 +1,36 @@
-# Validation Record
+# Portfolio Validation Record
 
-Checked October 25, 2026. No notebook source, notebook markdown, saved output, report, or presentation was edited. All 14 renamed artifacts retain their original SHA-256 digests; see the [rename record](file-renames.md).
+Reviewed October 25, 2026. All ten featured entries contain artifacts. Original code, saved outputs, reports, and presentations were preserved. The fleet suitability notebook restores four intact original cells; its previous incomplete version is archived. See [artifact provenance](file-renames.md).
 
-## Execution Method
-
-Noninteractive analyses were checked by executing their saved code cells in order in a fresh Python subprocess from the project directory. A lightweight `display` stand-in was supplied by the external test harness where IPython was unavailable. The charging notebook uses its own display fallback. Matplotlib used a noninteractive backend. This checks sequential Python execution, but is not a full Jupyter UI or notebook-kernel compatibility test. No executed notebook copies replaced the originals.
-
-The initial audit environment did not have Jupyter execution packages, IPython, or all project dependencies. A separate test environment was later prepared for the fleet suitability review. Saved output review is separate from a fresh execution result. None of the ten notebooks contains a saved error output; that alone does not establish that a notebook runs from a clean kernel.
-
-| Project | Observed execution result | Required follow-up |
+| Project | Current result | Details |
 |---|---|---|
-| Level 2 charging infrastructure | All 14 nonempty code cells completed successfully using the official composite CSV downloaded by the unmodified code. All nine printed validation checks passed. | Confirm the same run in the intended Jupyter environment. Source data and generated test charts are not added to this commit. |
-| Commercial fleet EV suitability | Restored four intact original cells; all 17 nonempty cells completed in a fresh IPython process on the original 4,705-row input. Both models achieved 95.33% test accuracy. | Follow the project requirements and verified data-download instructions. A full Jupyter kernel connection could not be tested in this environment; see the project execution record. |
-| Dodgers attendance | All 12 nonempty code cells completed in a fresh IPython process using the original 81-game CSV; all 11 bobblehead games matched their supplemental names. Notebook bytes are unchanged. | Original dataset is now included beside the notebook. Install the documented requirements; see the project execution record. Full Jupyter transport was not tested here. |
-| Childcare affordability | All 20 nonempty code cells completed in a fresh IPython process using the original 34,567-row workbook; 2,360 counties were usable in 2018. Notebook bytes are unchanged. | Install the documented requirements and use the verified archived-workbook download helper. Full Jupyter transport was not tested here. |
-| Movie success | All 13 nonempty code cells completed in a fresh IPython process using three CSVs recovered from the original database. Notebook bytes are unchanged. The join retained 4,799 rows with 12 website and 44 API matches. | Recovered input CSVs and tested dependencies are included. Run from the documented project directory; full Jupyter transport was not tested here. |
-| Movie review sentiment | All 12 nonempty code cells completed across 25,000 reviews in fresh IPython. Both accuracy scores and both 25,000 x 49,642 feature-matrix shapes match saved outputs exactly; notebook bytes are unchanged. | Install requirements and run setup_data.py for the pinned public dataset mirror and verified NLTK resources. Full Jupyter transport was not tested here. |
-| EV incentive assistant | Not executed; requires an interactive Gemini API key and external model calls. Saved responses reviewed only. | Run with an authorized account and quota; verify any live incentive claims against their source programs. |
-| Lord of the Rings RAG study | Not executed; installs dependencies and retrieves external article/model content. Saved notebook reviewed only. | Run in a compatible connected environment; check retrieval and generated answers. This is now a featured project. Saved examples include successful answers and retrieval/generation failures. |
-| Fine-tuned DistilBERT sentiment | Final notebook imported unchanged. Saved outputs show completed T4 training, 88.4% test accuracy, macro F1 0.8840, and custom-review failures. No saved exception output. | A fresh GPU run was not repeated. Reproduce using the notebook’s Colab setup; model weights are not bundled. |
-| EV incentive assistant full fine-tuning | Latest revised notebook imported unchanged. Saved outputs record 25/28 strict checks, 26/28 correct decisions, and 8/8 usable complete calculation cases. No saved exception output; installation conflicts and one non-finite training metric remain documented. | A fresh Colab/Drive/GPU run was not repeated. Review broader real-world cases and supply current official program sources. |
-| Netflix content strategy | Presentation artifact; no notebook in this project. | Review the presentation visually before final submission. |
+| Level 2 charging infrastructure | All 14 nonempty cells completed; nine validation checks passed in the initial execution audit. | [Setup and execution record](../applied-data-science/level2-charging-infrastructure-planning/README.md) |
+| Fleet EV suitability | All 17 nonempty cells passed after restoring original steps. Both models reached 95.33% accuracy on the defined suitability label. | [Setup and provenance](../predictive-analytics/commercial-fleet-ev-suitability/README.md) |
+| Dodgers attendance | All 12 nonempty cells passed on 81 games; all 11 bobblehead games matched their supplemental names. | [Included input and execution record](../business-analytics/dodgers-attendance-promotion-strategy/README.md) |
+| Childcare affordability | All 20 nonempty cells passed with the original workbook; 2,360 counties were usable in 2018. | [Verified download and execution record](../data-visualization-storytelling/childcare-affordability-workforce-impact/README.md) |
+| Movie success | All 13 nonempty cells passed using recovered CSVs; 4,799 joined rows, 12 website and 44 API matches. | [Included snapshots and coverage limits](../data-wrangling/what-determines-movie-success/README.md) |
+| TextBlob/VADER sentiment | All 12 nonempty cells passed on 25,000 reviews. Saved accuracy scores and feature dimensions matched exactly. | [Verified setup and execution record](../natural-language-processing/movie-review-sentiment-analysis/README.md) |
+| Lord of the Rings RAG | All 12 runtime cells passed on CPU, including retrieval, generation, and the original interactive loop. Installation completed separately. | [Tested dependencies and execution record](../generative-ai/lord-of-the-rings-rag/README.md) |
+| EV incentive assistant | API workflow meets Dan's key/setup criterion: runnable unchanged Python export, launcher, and simulated five-request check. Full fine-tuning syntax and saved run reviewed; original data-generation/scoring cells passed freshly. | [API and Colab instructions](../generative-ai/commercial-fleet-ev-incentive-assistant/README.md) |
+| Fine-tuned DistilBERT | All 11 code cells passed syntax checks. Retained Colab results show 88.4% test accuracy and macro F1 0.8840; no saved exception outputs. | [Colab instructions and review record](../natural-language-processing/fine-tuned-movie-review-sentiment/README.md) |
+| Netflix content strategy | 13 slides and 14 embedded images checked; ZIP integrity and all internal relationships passed. Slide text and embedded images inspected. | [Presentation and review record](../data-visualization-storytelling/netflix-top10-content-strategy/README.md) |
 
-## What Is and Is Not Confirmed
+## Execution Methods and Limits
 
-Artifact integrity, descriptive filenames, repository organization, and local documentation targets were checked. The charging analysis completed a fresh sequential code run. The portfolio does **not** currently satisfy the requirement that every featured notebook has a confirmed successful clean run. Missing original inputs, external account requirements remain explicit completion items. All ten selected project entries now contain artifacts; none is a planning placeholder.
+Fresh execution used original code cells in order, generally in a new IPython process. The initial charging run used a Python subprocess with the notebook's own display fallback. The RAG package install ran separately, and the unchanged interactive cell received scripted question/exit input. Executed copies did not replace source notebooks.
 
-## Portfolio Expansion
+A connected Jupyter kernel transport was unavailable here. Sequential IPython checks test execution and state dependencies, but do not certify the Jupyter UI. Syntax checks transform notebook magics with IPython before parsing; they are not equivalent to training.
 
-The RAG study is now featured. The final IMDb fine-tuning notebook and latest revised incentive-assistant fine-tuning notebook were copied without changes; source and repository SHA-256 digests match. JSON structure and saved results were reviewed. All previously tracked notebooks, reports, and presentations also retain their pre-update bytes. No GPU training was repeated as part of this update.
+Dan accepts an API-key requirement when a runnable Python file and instructions exist. The Gemini export matches the original notebook code. Its simulated five-request run checked readable output and original rebate arithmetic. A live request was not made; account, model access, and quota are still needed to run it.
 
-## API-Key Completion Criterion
+Both training notebooks require a CUDA GPU; the incentive notebook also mounts Google Drive. Their retained completed Colab results and source syntax were reviewed. Fresh GPU training was **not repeated** in this CPU environment. The incentive notebook's original data-generation and scoring/calculator cells were executed independently: splits were 168/28/28, altered port counts were rejected, and the $6,000 arithmetic fixture passed. These test the evaluation code, not new model performance.
 
-At Dan's direction, an API key requirement does not by itself leave a portfolio project unfinished when its code is available in a runnable Python file. The Gemini incentive experiments now have an unchanged-code `.py` export, a terminal launcher, a dependency list, and setup commands. Source-cell equality, Python syntax, and the five-request flow are checked with a simulated client. Live API access is not verified without a key. This criterion applies to the Gemini experiment workflow; it does not establish a fresh run of its separate GPU fine-tuning workflow or resolve missing data and missing definitions elsewhere.
+## Provenance and Interpretation
 
-## Fleet Suitability Review Completed
+The movie CSVs were recovered from the original database, with value/missingness and floating-point checks; they are not claimed as byte-identical originals. The sentiment TSV uses a pinned public mirror matching saved IDs, label counts, scores, and dimensions; the original local TSV was unavailable for byte comparison.
 
-The active notebook now restores four intact original code cells while preserving all pre-existing cell contents and order. The previous incomplete file remains in the project archive. A fresh IPython execution passed all 17 nonempty code cells using the original public input, which matches the official downloadable CSV byte for byte. The setup helper verifies that file’s SHA-256 digest. See the project README, `execution_summary.json`, and `restoration_record.json` for the current result. This supersedes the initial missing-definitions failure. Full Jupyter transport was unavailable in this environment; no notebook source was changed to work around it.
+RAG and incentive failures remain visible. A successful execution does not guarantee accurate model answers. The incentive prototype uses fictional program evidence, not current eligibility rules.
 
-## Dodgers Review Completed
+Netflix slide text and embedded images were reviewed, but full PowerPoint/LibreOffice layout and font rendering were unavailable. The source presentation is unchanged.
 
-The original `dodgers-2022.csv` is now bundled in the project folder. All 12 nonempty code cells ran sequentially in a fresh IPython process with no source changes, including the Matplotlib boxplot and supplemental giveaway join. All 11 bobblehead games had giveaway names. The notebook’s original year construction and input filename are documented explicitly. See its README and `execution_summary.json` for the tested versions, hashes, and observed promotion comparisons. This supersedes the initial missing-file failure.
-
-## Childcare Review Completed
-
-All 20 nonempty code cells passed sequentially in a fresh IPython process with the original 2008-2018 workbook. The notebook is unchanged. Its requirements include openpyxl; the project’s download helper checks the archived workbook against the execution input’s SHA-256 digest. The execution record reports 34,567 input rows, 23,593 rows after the original missing-price filter, and 2,360 usable 2018 counties. This supersedes the initial missing-workbook failure.
-
-## Movie-Success Review Completed
-
-The three cleaned inputs were recovered from the original SQLite database, preserving all table columns. CSV round-trip comparisons passed with equivalent missing values and a 1e-14 floating-point tolerance. All 13 nonempty code cells ran sequentially in fresh IPython with unchanged notebook bytes. Requirements now include requests. The README documents the exact input layout and the limited coverage of the website/API joins. This supersedes the initial missing-dependency and missing-input blockers.
-
-## TextBlob/VADER Review Completed
-
-All 12 nonempty code cells passed on 25,000 labeled reviews, with exact reproduction of the retained TextBlob accuracy (0.68524), VADER accuracy (0.69356), and both feature-matrix shapes (25,000 x 49,642). The original local TSV was unavailable; a public mirror pinned to a commit supplied matching IDs, class counts, and results. The setup helper retrieves and verifies that file and the official NLTK stopwords/VADER resources. It does not change the notebook. This supersedes the initial missing-input/resource blockers.
+There are no remaining known missing-input or missing-definition blockers in the active featured analyses. This record does not claim fresh runs of the two GPU training workflows or live Gemini access.

@@ -39,3 +39,12 @@ The model weights and generated CSVs are saved separately during a run; they are
 The training and evaluation samples are small, inputs are truncated, and results concern English movie reviews. Prediction scores are not calibrated probabilities of correctness. Six original examples are diagnostic probes, not another reliable accuracy estimate. This session reviewed saved outputs and notebook structure; it did not repeat GPU training.
 
 [Portfolio](../../index.html) · [Validation record](../../docs/validation.md)
+
+## Colab Run Instructions
+
+1. [Open the current notebook in Colab](https://colab.research.google.com/github/danof2morrow/data-science-portfolio/blob/main/natural-language-processing/fine-tuned-movie-review-sentiment/fine_tuned_movie_review_sentiment.ipynb).
+2. Select **Runtime → Change runtime type → T4 GPU** (or another compatible CUDA GPU).
+3. Run the notebook’s installation cell, then run the remaining cells in order. Retain Colab’s GPU-enabled PyTorch. The companion [requirements-colab.txt](requirements-colab.txt) mirrors the packages installed by that cell; it does not install PyTorch.
+4. Save any generated model and result files before the temporary Colab runtime ends. The repository contains the notebook’s retained evidence, not the separately saved weights.
+
+The [review record](review_summary.json) confirms syntax checks and retained run evidence. Fresh GPU training was not repeated in the CPU review environment. The original notebook is unchanged.

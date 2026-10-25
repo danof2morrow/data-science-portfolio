@@ -103,3 +103,7 @@ Use Python, pandas, NumPy, Matplotlib, and seaborn. The notebook checks for a lo
 Open Jupyter from this project folder and restart the kernel before running all cells in order. Original source data is not bundled in this repository. See [validation status](../../docs/validation.md) for the current execution limits. Existing code, markdown, and saved outputs in the notebook are preserved.
 
 [Portfolio](../../index.html) · [Repository guide](../../README.md)
+
+## Quick Start
+
+From this project folder, run `python -m pip install -r requirements.txt`, then `python -m jupyterlab`. Open the notebook and run cells in order. Its existing loading cell downloads Fleet DNA if no local copy is present; no API key is required. If downloading is blocked, place the original file at `data/fleet_dna_composite.csv`. Generated figures are written to `figures_operationally_suited/`.

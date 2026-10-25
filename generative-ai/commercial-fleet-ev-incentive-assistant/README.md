@@ -53,3 +53,12 @@ Enter your Gemini API key at the hidden prompt. The script makes five model requ
 The newer full fine-tuning notebook is a separate Colab GPU/Drive workflow and does not require a Gemini API key.
 
 For this portfolio, a supplied API key is a setup requirement rather than unfinished work. Syntax, source integrity, and the five-request control flow are checked without a live key. A live service run is not claimed; access or quota errors still need to be resolved by the person running it. This exception does not close the missing-data or missing-code issues in other projects.
+
+## Colab Run Instructions
+
+1. [Open the current notebook in Colab](https://colab.research.google.com/github/danof2morrow/data-science-portfolio/blob/main/generative-ai/commercial-fleet-ev-incentive-assistant/commercial_fleet_ev_incentive_assistant_fine_tuning.ipynb).
+2. Select **Runtime → Change runtime type → T4 GPU** (or another compatible CUDA GPU).
+3. Run the notebook’s installation cell, then run the remaining cells in order. Retain Colab’s GPU-enabled PyTorch. The companion [requirements-colab.txt](requirements-colab.txt) mirrors the packages installed by that cell; it does not install PyTorch.
+4. Mount your own Google Drive when prompted. The notebook verifies storage before training, saves model weights/results there, and can reuse a matching completed run.
+
+The [review record](fine_tuning_review.json) confirms syntax checks and retained run evidence. Fresh GPU training was not repeated in the CPU review environment. The original notebook is unchanged.
