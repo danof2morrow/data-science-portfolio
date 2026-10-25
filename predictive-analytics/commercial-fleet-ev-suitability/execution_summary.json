@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "method": "fresh IPython process; unchanged code cells executed sequentially",
+  "nonempty_code_cells": 17,
+  "notebook_sha256": "b50f4d4fe59ca399262f92fd9427c932dc727fdb341714a56ad9c8f152e72856",
+  "data_sha256": "df5798cc8513e6f896fae5488616e39ba341576c4404c4e182ce3795fc3b9d21",
+  "rows": 4705,
+  "train_rows": 3528,
+  "test_rows": 1177,
+  "decision_tree_accuracy": 0.9532710280373832,
+  "decision_tree_f1": 0.9675898644667059,
+  "random_forest_accuracy": 0.9532710280373832,
+  "random_forest_f1": 0.967741935483871,
+  "versions": {
+    "pandas": "2.2.3",
+    "numpy": "2.3.5",
+    "matplotlib": "3.10.8",
+    "scikit-learn": "1.8.0",
+    "ipython": "9.17.1"
+  }
+}

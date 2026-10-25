@@ -52,7 +52,7 @@ The analysis shows that fleet electrification should be approached as a prioriti
 
 Average speed, stop activity, and daily distance were among the most important operational characteristics associated with the suitability classification.
 
-The random forest provided the strongest overall predictive performance, while the decision tree provided a more interpretable view of the classification logic.
+In the fresh execution check, both models achieved the same accuracy, with slightly higher F1 for the random forest. The decision tree provided a more interpretable view of the classification logic.
 
 These results are intended to support an initial screening process rather than serve as a final vehicle-purchase recommendation.
 
@@ -90,8 +90,31 @@ Vehicles identified as stronger operational candidates should move into a more d
 
 ## Reproduce the Analysis
 
-Place the original Fleet DNA CSV or Excel file beside the notebook; its filename must contain `fleet` or `dna`. Use Python, pandas, NumPy, Matplotlib, seaborn, scikit-learn, and openpyxl for Excel inputs. **The saved notebook references undefined state**, including `negative_stop_count`, `stop_duration_cap`, `model_ready`, model objects, and evaluation variables. Recover the complete original notebook before claiming a clean run. No code was added to reconstruct those missing steps.
+Use Python 3.11 or newer. From this project folder:
 
-Open Jupyter from this project folder and restart the kernel before running all cells in order. Original source data is not bundled in this repository. See [validation status](../../docs/validation.md) for the current execution limits. Existing code, markdown, and saved outputs in the notebook are preserved.
+```bash
+python -m pip install -r requirements.txt
+python download_data.py
+python -m jupyterlab
+```
+
+Open `commercial_fleet_ev_suitability.ipynb`, restart the kernel, and run all cells in order. The data helper downloads the original public Fleet DNA CSV beside the notebook and checks its SHA-256 digest against the verified input. It will not overwrite an existing different dataset or save a changed upstream file. If downloading is blocked, place the original `data_for_fleet_dna_composite_data.csv` beside the notebook and run the helper to verify it. An API key is not required.
+
+## Execution Check
+
+On October 25, 2026, all **17 nonempty code cells** completed sequentially in a fresh IPython process using **4,705 vehicle-day rows**, with **3,528 training rows** and **1,177 test rows**.
+
+| Model | Test accuracy | Test F1 |
+|---|---:|---:|
+| Decision tree | 95.33% | 0.9676 |
+| Random forest | 95.33% | 0.9677 |
+
+These scores concern the project’s rule-defined operational suitability label, not observed EV deployment success. The random forest had a slightly higher F1; accuracy was equal in this run. The [execution record](execution_summary.json) lists the tested package versions and input hashes. A full Jupyter kernel connection was blocked by this execution environment; the fresh IPython run tested every code cell without modifying its source.
+
+## Original-Code Restoration
+
+The earlier portfolio copy omitted cleaning and model-fitting steps. Four intact original code cells were recovered from a fuller source notebook and inserted in the required positions. No existing code-cell text, parameter, or calculation was edited, and all prior cells remain in their original order. The previous incomplete notebook is preserved byte for byte in [archive](archive/README.md). The [restoration record](restoration_record.json) identifies the sources, restored cells, and file hashes.
+
+The published notebook retains its saved outputs rather than replacing them with newly generated ones. The execution record reports the new check separately.
 
 [Portfolio](../../index.html) · [Repository guide](../../README.md)

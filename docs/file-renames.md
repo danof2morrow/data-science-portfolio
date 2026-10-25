@@ -27,3 +27,7 @@ These final source notebooks were imported with descriptive filenames. Original 
 |---|---|---|
 | `DSC670_Week6_Fine_Tuning_Morrow_D_Final.ipynb` | `natural-language-processing/fine-tuned-movie-review-sentiment/fine_tuned_movie_review_sentiment.ipynb` | `72b5b812a0cfcdbc19a5253237226baa146b26fbf86a9f98c17e1768e522a15a` |
 | `DSC670_Milestone3_Morrow_D_Revised (1).ipynb` | `generative-ai/commercial-fleet-ev-incentive-assistant/commercial_fleet_ev_incentive_assistant_fine_tuning.ipynb` | `6245ddcf775dbe5bf4d90203816cc2e1ac3144d5b6575dd28305748c7fe55e54` |
+
+## Fleet Suitability Restoration
+
+The fleet suitability digest in the original rename table records the initial cleanup snapshot. That exact file is now preserved at `predictive-analytics/commercial-fleet-ev-suitability/archive/commercial_fleet_ev_suitability_incomplete.ipynb`. The active notebook adds four intact original source cells without editing prior cell contents. Its new hash and cell provenance are recorded in the project’s `restoration_record.json`.

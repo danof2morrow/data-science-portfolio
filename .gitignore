@@ -8,3 +8,7 @@ __pycache__/
 
 # Generated charging-analysis output; original inputs are supplied separately
 applied-data-science/level2-charging-infrastructure-planning/figures_operationally_suited/
+
+# Verified Fleet DNA input is retrieved from its official public source
+predictive-analytics/commercial-fleet-ev-suitability/data_for_fleet_dna_composite_data.csv
+predictive-analytics/commercial-fleet-ev-suitability/*.download

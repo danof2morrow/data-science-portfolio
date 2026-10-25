@@ -1,0 +1,30 @@
+{
+  "original_portfolio_sha256": "c33cd30b627cfecd028c6dc980e2c59b02be586cc739d3fdc079b2de6697ace3",
+  "recovered_source_filename": "DSC630_Milestone_4_morrow_4(1).ipynb",
+  "recovered_source_sha256": "c4f0b97fb37e27464971fc981a54c7d3ab62755a642a00144393b61719eb7160",
+  "restored_notebook_sha256": "b50f4d4fe59ca399262f92fd9427c932dc727fdb341714a56ad9c8f152e72856",
+  "restored_cells": [
+    {
+      "position": 11,
+      "source_cell_index": 13,
+      "source_sha256": "68f00ec80657a1b55f54ee770cfd6bf717239907a3c624d7c52a857cc183f685"
+    },
+    {
+      "position": 14,
+      "source_cell_index": 15,
+      "source_sha256": "c95d9e3519b29261896eb590549c42776789581af33980da4c253cab3ed50ee1"
+    },
+    {
+      "position": 18,
+      "source_cell_index": 17,
+      "source_sha256": "295495bd81c9583eecdaeb598154534022c27116e88c8af005c80ce07ebb3aad"
+    },
+    {
+      "position": 20,
+      "source_cell_index": 19,
+      "source_sha256": "59a07e4a653f67aca58b3b73191a0338d33a69db821a21d81bd55fdad1ac5327"
+    }
+  ],
+  "original_cells_unchanged": true,
+  "note": "Recovered cells receive unique notebook metadata IDs; all source code is unchanged."
+}

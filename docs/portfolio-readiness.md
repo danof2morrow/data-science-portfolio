@@ -8,7 +8,7 @@
 - The incentive assistant includes its original prompt experiments and the latest revised full fine-tuning milestone as one evolving project.
 - Project READMEs explain the problem, approach, findings, artifact links, reproduction requirements, and limitations.
 - About, Work, and Contact are populated, with project summaries and links to detailed repository content.
-- Original notebook code, markdown, saved outputs, reports, and presentations are preserved. SHA-256 checks cover the original artifacts and both newly imported notebooks.
+- Original code-cell text, markdown, saved outputs, reports, and presentations are preserved. The fleet suitability notebook now also contains four recovered original cells; its prior version is archived byte for byte. Hash and restoration records document the sources.
 
 ## Public Presentation
 
@@ -20,7 +20,7 @@ Updates to the default branch publish through the existing GitHub Pages configur
 
 ## Remaining Final-Submission Work
 
-1. Recover the complete original fleet suitability notebook. The current artifact references missing definitions; no code has been reconstructed or changed.
+1. Fleet suitability execution review completed: four intact original cells restore the missing steps, with all existing code preserved and the prior file archived. All 17 nonempty cells passed in a fresh IPython process. Follow its documented dependency and data setup.
 2. Supply the original datasets and documented dependencies, and confirm clean Jupyter runs for remaining featured notebooks. Saved Colab training results are explicitly distinguished from new execution checks.
 3. Review final reports and presentations visually and check all public links after deployment.
 4. Treat the incentive assistant and RAG application as evaluated prototypes with documented failure modes. Broader testing and current official incentive sources remain future development for the assistant.
