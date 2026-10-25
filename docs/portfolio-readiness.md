@@ -30,3 +30,7 @@ The ten-project content and presentation requirements are populated. The require
 ## Childcare Execution Review
 
 All 20 nonempty code cells passed using the original workbook with unchanged notebook bytes. Dependency instructions and a verified archive-download helper are included. See the project execution record for the input hash and historical results.
+
+## Movie-Success Execution Review
+
+All 13 nonempty code cells passed with unchanged notebook bytes. Three cleaned input snapshots were recovered from the original SQLite database and are included in the required locations. Setup instructions and join-coverage limits are documented.

@@ -1,0 +1,45 @@
+{
+  "status": "passed",
+  "checked_on": "2026-10-25",
+  "method": "fresh IPython process; unchanged code cells executed sequentially",
+  "nonempty_code_cells": 13,
+  "notebook_sha256": "593dfd25c987a44380526403d704dddb56cb3bb5ade9180920bf87fe6036b51c",
+  "source_database_sha256": "3716463f6a32c1e9865ffd5d023497a6703a7438b536c75dc555c9f8ceb9f3e3",
+  "input_recovery": "CSV files exported from original SQLite tables; values checked by pandas round trip with floating-point tolerance 1e-14",
+  "inputs": [
+    {
+      "table": "movies_flat",
+      "csv_path": "data-wrangling/cleaned_flat_movies.csv",
+      "rows": 4799,
+      "columns": 20,
+      "sha256": "04e3faf733156e226487cc17ce2e826c9eb348b53ea9e9dd44ae6ef4ff4e0bd8",
+      "bytes": 4196239
+    },
+    {
+      "table": "movies_website",
+      "csv_path": "data-wrangling/what-determines-movie-success/cleaned_website_movies.csv",
+      "rows": 50,
+      "columns": 5,
+      "sha256": "c461c285f6cda9e8e1073e971955e7c47e53db77904236c36beb18b53af35608",
+      "bytes": 2426
+    },
+    {
+      "table": "movies_api",
+      "csv_path": "data-wrangling/what-determines-movie-success/cleaned_api_movies.csv",
+      "rows": 188,
+      "columns": 10,
+      "sha256": "c431e5eeb1aadd8b836279e6b4ad7b862bf8b269dc54c9613aee055c123e8b15",
+      "bytes": 18696
+    }
+  ],
+  "merged_rows": 4799,
+  "rows_with_website_gross": 12,
+  "rows_with_api_popularity": 44,
+  "versions": {
+    "pandas": "2.2.3",
+    "numpy": "2.3.5",
+    "matplotlib": "3.10.8",
+    "requests": "2.34.2",
+    "ipython": "9.17.1"
+  }
+}

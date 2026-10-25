@@ -1,0 +1,6 @@
+pandas==2.2.3
+numpy==2.3.5
+matplotlib==3.10.8
+requests==2.34.2
+ipython==9.17.1
+jupyterlab>=4,<5
