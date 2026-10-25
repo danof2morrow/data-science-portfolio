@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "checked_on": "2026-10-25",
+  "method": "fresh IPython process; unchanged notebook code cells executed sequentially",
+  "nonempty_code_cells": 20,
+  "notebook_sha256": "1ec74453f4eaea8d29152f9774125732e7d198851d921d9e7f108a8cdb9425a6",
+  "data_sha256": "f6d96527ae6fe3d47b60b482c30ffab41e38d833c1bef972b6761b605ab14ca8",
+  "data_bytes": 35115212,
+  "input_shape": [
+    34567,
+    227
+  ],
+  "clean_rows": 23593,
+  "usable_counties_2018": 2360,
+  "medians_2018": {
+    "Annual_Infant": 7987.2,
+    "Annual_Preschool": 6500.0,
+    "Two_Child_Cost": 14850.16,
+    "Burden": 29.662437893709928
+  },
+  "two_child_cost_increase_2008_to_2018_percent": 25.548985558217748,
+  "versions": {
+    "pandas": "2.2.3",
+    "numpy": "2.3.5",
+    "matplotlib": "3.10.8",
+    "openpyxl": "3.1.5",
+    "ipython": "9.17.1"
+  }
+}

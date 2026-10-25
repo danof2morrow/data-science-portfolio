@@ -11,7 +11,7 @@ I connect business questions with data analysis, practical models, and clear com
 | [Level 2 Charging Infrastructure Planning](applied-data-science/level2-charging-infrastructure-planning/README.md) | Python · Scenario modeling · Cost analysis | Analysis available |
 | [Commercial Fleet EV Suitability](predictive-analytics/commercial-fleet-ev-suitability/README.md) | Python · Classification · Feature engineering | Execution verified |
 | [Dodgers Attendance and Promotion Strategy](business-analytics/dodgers-attendance-promotion-strategy/README.md) | Python · Exploratory analysis · Business recommendations | Execution verified |
-| [Childcare Affordability and Workforce Impact](data-visualization-storytelling/childcare-affordability-workforce-impact/README.md) | Python · Data visualization · Storytelling | Analysis available |
+| [Childcare Affordability and Workforce Impact](data-visualization-storytelling/childcare-affordability-workforce-impact/README.md) | Python · Data visualization · Storytelling | Execution verified |
 | [Netflix Top 10 Content Strategy](data-visualization-storytelling/netflix-top10-content-strategy/README.md) | Visualization · PowerPoint · Storytelling | Presentation available |
 | [What Determines Movie Success?](data-wrangling/what-determines-movie-success/README.md) | Python · SQL · Data integration | Analysis available |
 | [Movie Review Sentiment Analysis](natural-language-processing/movie-review-sentiment-analysis/README.md) | Python · NLP · Text preprocessing | Analysis available |

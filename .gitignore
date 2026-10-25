@@ -12,3 +12,7 @@ applied-data-science/level2-charging-infrastructure-planning/figures_operational
 # Verified Fleet DNA input is retrieved from its official public source
 predictive-analytics/commercial-fleet-ev-suitability/data_for_fleet_dna_composite_data.csv
 predictive-analytics/commercial-fleet-ev-suitability/*.download
+
+# Original childcare workbook is retrieved from the official archive
+data-visualization-storytelling/childcare-affordability-workforce-impact/nationaldatabaseofchildcareprices.xlsx
+data-visualization-storytelling/childcare-affordability-workforce-impact/*.download
