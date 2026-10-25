@@ -12,7 +12,7 @@ The initial audit environment did not have Jupyter execution packages, IPython, 
 |---|---|---|
 | Level 2 charging infrastructure | All 14 nonempty code cells completed successfully using the official composite CSV downloaded by the unmodified code. All nine printed validation checks passed. | Confirm the same run in the intended Jupyter environment. Source data and generated test charts are not added to this commit. |
 | Commercial fleet EV suitability | Restored four intact original cells; all 17 nonempty cells completed in a fresh IPython process on the original 4,705-row input. Both models achieved 95.33% test accuracy. | Follow the project requirements and verified data-download instructions. A full Jupyter kernel connection could not be tested in this environment; see the project execution record. |
-| Dodgers attendance | Stopped at `FileNotFoundError: dodgers-2022.csv`. | Supply the original data and rerun. Use a Matplotlib release supporting `tick_labels`. |
+| Dodgers attendance | All 12 nonempty code cells completed in a fresh IPython process using the original 81-game CSV; all 11 bobblehead games matched their supplemental names. Notebook bytes are unchanged. | Original dataset is now included beside the notebook. Install the documented requirements; see the project execution record. Full Jupyter transport was not tested here. |
 | Childcare affordability | Stopped at `FileNotFoundError: nationaldatabaseofchildcareprices.xlsx`. | Supply the original workbook, install openpyxl if needed, and rerun. |
 | Movie success | Stopped at `ModuleNotFoundError: requests`. Three required cleaned CSVs are also absent from the repository. | Install the documented packages, recover the cleaned inputs, and rerun from the documented directory. |
 | Movie review sentiment | Stopped at `FileNotFoundError: labeledTrainData.tsv`. | Supply the original labeled reviews and the documented NLP resources, then rerun. |
@@ -37,3 +37,7 @@ At Dan's direction, an API key requirement does not by itself leave a portfolio 
 ## Fleet Suitability Review Completed
 
 The active notebook now restores four intact original code cells while preserving all pre-existing cell contents and order. The previous incomplete file remains in the project archive. A fresh IPython execution passed all 17 nonempty code cells using the original public input, which matches the official downloadable CSV byte for byte. The setup helper verifies that file’s SHA-256 digest. See the project README, `execution_summary.json`, and `restoration_record.json` for the current result. This supersedes the initial missing-definitions failure. Full Jupyter transport was unavailable in this environment; no notebook source was changed to work around it.
+
+## Dodgers Review Completed
+
+The original `dodgers-2022.csv` is now bundled in the project folder. All 12 nonempty code cells ran sequentially in a fresh IPython process with no source changes, including the Matplotlib boxplot and supplemental giveaway join. All 11 bobblehead games had giveaway names. The notebook’s original year construction and input filename are documented explicitly. See its README and `execution_summary.json` for the tested versions, hashes, and observed promotion comparisons. This supersedes the initial missing-file failure.

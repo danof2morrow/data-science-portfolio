@@ -21,7 +21,7 @@ Updates to the default branch publish through the existing GitHub Pages configur
 ## Remaining Final-Submission Work
 
 1. Fleet suitability execution review completed: four intact original cells restore the missing steps, with all existing code preserved and the prior file archived. All 17 nonempty cells passed in a fresh IPython process. Follow its documented dependency and data setup.
-2. Supply the original datasets and documented dependencies, and confirm clean Jupyter runs for remaining featured notebooks. Saved Colab training results are explicitly distinguished from new execution checks.
+2. Dodgers execution review completed: original data is included, dependencies are documented, and all 12 nonempty cells passed in a fresh IPython process with unchanged notebook bytes. Supply the original datasets and documented dependencies, and confirm execution for the remaining featured notebooks. Saved Colab training results are explicitly distinguished from new execution checks.
 3. Review final reports and presentations visually and check all public links after deployment.
 4. Treat the incentive assistant and RAG application as evaluated prototypes with documented failure modes. Broader testing and current official incentive sources remain future development for the assistant.
 

@@ -1,0 +1,42 @@
+{
+  "status": "passed",
+  "checked_on": "2026-10-25",
+  "method": "fresh IPython process; unchanged notebook code cells executed sequentially",
+  "nonempty_code_cells": 12,
+  "notebook_sha256": "969eabe440dd53c2c74dd69acc1b00f72616ec654e499eca37888c351a00dbd4",
+  "data_sha256": "ec961c5c1fd71318017745b2cac48d22443046245d12fad542facfa253f31d8b",
+  "games": 81,
+  "constructed_season_years": [
+    2012
+  ],
+  "promotion_summary": [
+    {
+      "Promotion": "cap",
+      "Average Attendance With Promotion": 38190.0,
+      "Average Attendance Without Promotion": 41112.0
+    },
+    {
+      "Promotion": "shirt",
+      "Average Attendance With Promotion": 46644.0,
+      "Average Attendance Without Promotion": 40825.0
+    },
+    {
+      "Promotion": "fireworks",
+      "Average Attendance With Promotion": 41078.0,
+      "Average Attendance Without Promotion": 41032.0
+    },
+    {
+      "Promotion": "bobblehead",
+      "Average Attendance With Promotion": 53145.0,
+      "Average Attendance Without Promotion": 39138.0
+    }
+  ],
+  "bobblehead_games": 11,
+  "missing_bobblehead_names": 0,
+  "versions": {
+    "pandas": "2.2.3",
+    "numpy": "2.3.5",
+    "matplotlib": "3.10.8",
+    "ipython": "9.17.1"
+  }
+}
