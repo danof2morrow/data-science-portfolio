@@ -2,7 +2,7 @@
 
 I connect business questions with data analysis, practical models, and clear communication, with a particular interest in commercial fleet electrification.
 
-[View the portfolio](https://danof2morrow.github.io/data-science-portfolio/) · [GitHub profile](https://github.com/danof2morrow)
+[View the portfolio](https://danof2morrow.github.io/data-science-portfolio/) · [LinkedIn](https://www.linkedin.com/in/danof2morrow/) · [GitHub profile](https://github.com/danof2morrow)
 
 ## Selected Projects
 

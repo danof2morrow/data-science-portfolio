@@ -18,6 +18,14 @@ The project includes:
 - Examining genre and popularity patterns
 - Exploring audience response and ratings
 
+## Key Findings
+
+- The SQL joins retained **4,799 movie records** from the cleaned flat-file source.
+- Only **12 records (0.25%)** matched a website worldwide-gross value, and **44 records (0.92%)** matched an API popularity value. These counts, reproduced in the [execution record](execution_summary.json), show why the added fields cannot be treated as complete coverage of the movie sample.
+- The notebook's budget-versus-revenue plot shows a positive association with substantial variation across films. A larger budget does not guarantee higher revenue for an individual film, and revenue is not the same as profit.
+
+The practical lesson is to check overlap between sources before interpreting a joined dataset. The financial comparison uses the more complete flat-file budget and revenue fields. The website and API matches provide limited additional context, rather than a representative sample of all 4,799 films.
+
 ## Tools
 
 - Python

@@ -19,9 +19,9 @@ The project examines factors such as:
 
 ## Key Finding
 
-Bobblehead promotions showed the strongest relationship with higher attendance in the analysis.
+Across the 81-game dataset, the 11 bobblehead games averaged **53,145 attendees**, compared with **39,138** at the 70 games without a bobblehead promotion. The difference was approximately **14,007 attendees per game**, or **35.8%** relative to games without the promotion.
 
-The project recommends using bobblehead promotions strategically when the goal is to increase game attendance.
+Bobbleheads showed the largest attendance difference among the promotion types examined. This supports testing targeted giveaways on weaker dates. The comparison is observational: opponents, scheduling, and other factors may contribute to the difference.
 
 ## Tools
 
