@@ -1,0 +1,18 @@
+{
+  "prompt_version": "dte-efleet-planning-v2-few-shot",
+  "provenance_verified": true,
+  "case_count": 6,
+  "valid_json": 6,
+  "decision_label_matches": 3,
+  "strict_structured_passes": 2,
+  "calculation_handoffs": 0,
+  "manual_findings": {
+    "complete": "Still requires eligible project cost unnecessarily; no handoff.",
+    "ports_unknown": "Relevant request for confirmed port count; field-name mismatch is a scoring limitation. Explanation refers to a charger count that is not actually in this payload.",
+    "meter_unknown": "Matches the missing-field identifier, but the question confuses meter identity with port location and does not explain the qualified-network alternative.",
+    "choice_unknown": "Matches the field identifier, but wrongly treats Electric Choice as a mandatory eligibility condition and asserts no eligible customer despite an unknown status.",
+    "electric_choice": "Still asks for eligible cost; no handoff.",
+    "wrong_utility": "Still misses confirmed utility mismatch and asks for cost."
+  },
+  "conclusion": "The second prompt ran successfully. Prompt-only adaptation did not produce a usable official-program workflow. The two structured passes must not be presented as semantically accurate responses."
+}

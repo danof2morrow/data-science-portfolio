@@ -4,13 +4,23 @@
 
 Fleet charging incentive information is scattered, eligibility depends on customer and project details, and a plausible estimate can be misleading when required information is missing. This prototype explores an assistant that asks for clarification, follows supplied program rules, and passes confirmed inputs to Python for calculations.
 
+## DTE Full Fine-Tuning Notebook — Prepared, Not Yet Run
+
+The [DTE training notebook](commercial_fleet_ev_incentive_assistant_dte_full_fine_tuning.ipynb) prepares a fresh full fine-tuning run from the pinned Qwen2.5-0.5B-Instruct base revision. It uses 320 training, 64 validation, and 64 fresh test examples, with related projects kept together and test port counts and task wording separated from training. It does not update the original saved model.
+
+[Open in Colab](https://colab.research.google.com/github/danof2morrow/data-science-portfolio/blob/main/generative-ai/commercial-fleet-ev-incentive-assistant/commercial_fleet_ev_incentive_assistant_dte_full_fine_tuning.ipynb). Select a T4 GPU and run the cells in order. The notebook saves a separate full model, reports, and an application configured for its new run identity. It downloads a small results report after evaluation. New GPU training and new model-performance results are not claimed yet.
+
+The notebook schema, Python syntax, split separation, label/calculator fixtures, complete token lengths, and export format were checked locally. The export test used an explicitly labeled metadata fixture, not model weights or inference. The longest complete example was 1,042 tokens against a 1,280-token limit.
+
+The [second live report](live_reviews/official_program_v2_live_checks.json) and [manual review](live_reviews/official_program_v2_manual_review.json) record why prompt-only adaptation was not accepted as a working DTE workflow. All six responses used the revised prompt and parsed correctly. The model still made unnecessary cost requests and missed the confirmed utility mismatch. Its meter/network and Electric Choice responses matched field identifiers but contained factual errors.
+
 ## Official DTE eFleet Program
 
 The [Streamlit application](streamlit_app/README.md) now includes a dated official-program mode for DTE eFleet Level 2 charging. The linked agreement is revised September 2026; its program page and agreement were reviewed November 8, 2026. [Source URLs and document hashes](streamlit_app/source_review/receipt.json) and the [rules snapshot](streamlit_app/source_review/program_snapshot.json) document that review.
 
 The intake and independent Python checks cover the actual planning requirements. The calculation reports a published per-port ceiling before DTE discretionary caps and compliance review. It uses up to $2,500 per port, or $875 for Electric Choice customers. It does not apply the fictional cost-percentage limit, fixed cap, or assumed purchase-approval rule. Customer examples remain fictional.
 
-The saved fine-tuned model is unchanged. A separately versioned inference prompt supplies the official rules and makes unsupported cost/cap inputs null. Twenty-one rule/validation tests passed, including the retained fictional checks. Streamlit startup and result handling were tested with explicit fixtures. The first live official-program run is now recorded below. The current inference prompt adds worked examples; its live retest is pending. Code-test success is separate from model performance.
+The saved fine-tuned model is unchanged. A separately versioned inference prompt supplies the official rules and makes unsupported cost/cap inputs null. Twenty-one rule/validation tests passed, including the retained fictional checks. Streamlit startup and result handling were tested with explicit fixtures. The first live official-program run is now recorded below. The worked-example prompt also completed a live retest. Two responses passed the structured checks, but manual review found inaccurate explanations in both, and neither complete case produced a calculation handoff. Code-test success is separate from model performance.
 
 [Download the updated Streamlit source](commercial_fleet_ev_incentive_assistant_streamlit_source.zip). Load the saved model, open **Run example checks**, and run all six examples. The historical screenshots, exported reviews, and presentation below still describe the earlier fictional-program demonstration; they are not evidence of the official-program results.
 
@@ -135,6 +145,7 @@ For this portfolio, a supplied API key is a setup requirement rather than unfini
 4. Mount your own Google Drive when prompted. The notebook verifies storage before training, saves model weights/results there, and can reuse a matching completed run.
 
 The [review record](fine_tuning_review.json) confirms syntax checks and retained run evidence. Fresh GPU training was not repeated in the CPU review environment. The original notebook is unchanged.
+
 
 
 
