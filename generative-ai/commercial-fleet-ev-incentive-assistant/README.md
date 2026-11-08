@@ -4,6 +4,61 @@
 
 Fleet charging incentive information is scattered, eligibility depends on customer and project details, and a plausible estimate can be misleading when required information is missing. This prototype explores an assistant that asks for clarification, follows supplied program rules, and passes confirmed inputs to Python for calculations.
 
+## Running Streamlit Application
+
+The application uses the fully fine-tuned Qwen model saved in run `4ec6c67be487`.
+It reviews the submitted customer facts and program evidence, returns a structured
+response, and hands supported calculation inputs to Python. The interface keeps
+the original model answer and calculation checks available for inspection.
+
+- [Application code and local setup](streamlit_app/README.md)
+- [Main Streamlit file](streamlit_app/app.py)
+- [Project presentation](commercial_fleet_ev_incentive_assistant_presentation.pptx)
+- [Downloaded live review records](live_reviews/)
+
+GitHub Pages displays this portfolio; the model application runs locally in
+Streamlit. The saved weights are separate from the repository and are required
+for inference. The app verifies the completed model artifact and does not
+substitute the pretrained model.
+
+## Live Application Results
+
+These examples ran on my Mac using Apple MPS with the saved fine-tuned model.
+They reuse the notebook's fictional scenario generator and are demonstration
+checks, not a new independent accuracy evaluation.
+
+| Case | Model behavior | Application result | Response time |
+|---|---|---|---:|
+| Complete project | Supplied the confirmed calculation inputs | Python calculated a conditional $10,800 estimate | 4.23 s |
+| Unconfirmed eligible cost | Incorrectly claimed the inputs were confirmed and proposed a calculation | Python rejected the handoff; no estimate | 3.75 s |
+| Conflicting program sources | Asked which source was authoritative and returned no calculation inputs | No estimate while the conflict remained unresolved | 3.12 s |
+
+The complete project had 16 ports and $27,000 in confirmed eligible costs. Python
+selected the lowest of $14,400 under the per-port allowance, $10,800 under the
+40% eligible-cost limit, and the $26,000 cap. Total project cost was not substituted
+for eligible cost. The result remained conditional on program requirements and
+available funding.
+
+The unconfirmed-cost case shows a remaining model failure, even though the
+application blocked the unsupported estimate. Passing the JSON and field checks
+does not establish that every sentence of an explanation is accurate.
+
+### Running application
+
+![Streamlit project form with the fine-tuned model loaded](screenshots/01_loaded_model_and_project.png)
+
+### Complete project
+
+![Conditional estimate of $10,800 with the three program limits](screenshots/02_complete_project_result.png)
+
+### Unconfirmed eligible cost
+
+![Python blocks the calculation despite the model proposing it](screenshots/03_unconfirmed_cost_blocked.png)
+
+### Conflicting program sources
+
+![The model asks which program source is authoritative](screenshots/04_source_conflict_result.png)
+
 ## Project Development
 
 The [prompt-engineering notebook](commercial_fleet_ev_incentive_assistant.ipynb) and [initial report](commercial_fleet_ev_incentive_assistant_report.pdf) retain the original Gemini-based experiments. The [full fine-tuning notebook](commercial_fleet_ev_incentive_assistant_fine_tuning.ipynb) extends the same project with Qwen2.5-0.5B-Instruct training and before-and-after response evaluation. These stages belong to one portfolio project.
@@ -31,7 +86,7 @@ For full fine-tuning, open the newer notebook in Google Colab with a Tesla T4 or
 
 ## Status and Limitations
 
-**Evaluated prototype; further development remains.** The model is tested on a small synthetic dataset with repeated patterns. Token accuracy is not complete-answer accuracy, strict checks do not validate every explanation, and fictional program evidence does not establish real incentive availability or eligibility. This version does not search current program websites. A finished assistant needs current official sources, broader customer testing, and manual verification of its interpretations.
+**Working local Streamlit prototype with live demonstration results; further development remains.** The model is tested on a small synthetic dataset with repeated patterns. Token accuracy is not complete-answer accuracy, strict checks do not validate every explanation, and fictional program evidence does not establish real incentive availability or eligibility. This version does not search current program websites. Use with real customers would require current official sources, broader customer testing, and manual verification of its interpretations.
 
 Both notebooks and the report are preserved without content changes. See the [validation record](../../docs/validation.md) for fresh-run limits.
 
@@ -62,3 +117,4 @@ For this portfolio, a supplied API key is a setup requirement rather than unfini
 4. Mount your own Google Drive when prompted. The notebook verifies storage before training, saves model weights/results there, and can reuse a matching completed run.
 
 The [review record](fine_tuning_review.json) confirms syntax checks and retained run evidence. Fresh GPU training was not repeated in the CPU review environment. The original notebook is unchanged.
+

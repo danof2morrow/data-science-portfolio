@@ -1,6 +1,6 @@
 # Portfolio Validation Record
 
-Reviewed October 25, 2026. All ten featured entries contain artifacts. Original code, saved outputs, reports, and presentations were preserved. The fleet suitability notebook restores four intact original cells; its previous incomplete version is archived. See [artifact provenance](file-renames.md).
+Initial review October 25, 2026; incentive Streamlit evidence added November 8, 2026. All ten featured entries contain artifacts. Original code, saved outputs, reports, and presentations were preserved. The fleet suitability notebook restores four intact original cells; its previous incomplete version is archived. See [artifact provenance](file-renames.md).
 
 | Project | Current result | Details |
 |---|---|---|
@@ -11,7 +11,7 @@ Reviewed October 25, 2026. All ten featured entries contain artifacts. Original 
 | Movie success | All 13 nonempty cells passed using recovered CSVs; 4,799 joined rows, 12 website and 44 API matches. | [Included snapshots and coverage limits](../data-wrangling/what-determines-movie-success/README.md) |
 | TextBlob/VADER sentiment | All 12 nonempty cells passed on 25,000 reviews. Saved accuracy scores and feature dimensions matched exactly. | [Verified setup and execution record](../natural-language-processing/movie-review-sentiment-analysis/README.md) |
 | Lord of the Rings RAG | All 12 runtime cells passed on CPU, including retrieval, generation, and the original interactive loop. Installation completed separately. | [Tested dependencies and execution record](../generative-ai/lord-of-the-rings-rag/README.md) |
-| EV incentive assistant | API workflow meets Dan's key/setup criterion: runnable unchanged Python export, launcher, and simulated five-request check. Full fine-tuning syntax and saved run reviewed; original data-generation/scoring cells passed freshly. | [API and Colab instructions](../generative-ai/commercial-fleet-ev-incentive-assistant/README.md) |
+| EV incentive assistant | Local Streamlit app demonstrated with the saved fine-tuned model on Mac MPS. Three downloaded reviews confirm an accepted $10,800 estimate, a model error blocked by Python, and a source-conflict response. Eight calculator/validation tests passed; historical training results remain separate. | [API and Colab instructions](../generative-ai/commercial-fleet-ev-incentive-assistant/README.md) |
 | Fine-tuned DistilBERT | All 11 code cells passed syntax checks. Retained Colab results show 88.4% test accuracy and macro F1 0.8840; no saved exception outputs. | [Colab instructions and review record](../natural-language-processing/fine-tuned-movie-review-sentiment/README.md) |
 | Netflix content strategy | 13 slides and 14 embedded images checked; ZIP integrity and all internal relationships passed. Slide text and embedded images inspected. | [Presentation and review record](../data-visualization-storytelling/netflix-top10-content-strategy/README.md) |
 
@@ -34,3 +34,14 @@ RAG and incentive failures remain visible. A successful execution does not guara
 Netflix slide text and embedded images were reviewed, but full PowerPoint/LibreOffice layout and font rendering were unavailable. The source presentation is unchanged.
 
 There are no remaining known missing-input or missing-definition blockers in the active featured analyses. This record does not claim fresh runs of the two GPU training workflows or live Gemini access.
+
+
+## Streamlit Application Evidence — November 8, 2026
+
+The incentive assistant now includes its [Streamlit source](../generative-ai/commercial-fleet-ev-incentive-assistant/streamlit_app/), four actual running-application screenshots, a presentation, and three downloaded JSON reviews. The reviews identify model run `4ec6c67be487` and the same manifest fingerprint. Inference ran on Dan's Mac using MPS, not in the CPU review workspace.
+
+The complete project produced a conditional $10,800 estimate. With unconfirmed eligible costs, the model incorrectly proposed a calculation; the independent Python check blocked it. Conflicting program evidence prompted an authoritative-source question and no calculation inputs. These are demonstrations using the existing fictional scenario generator, not an additional independent model accuracy test.
+
+Eight unit tests passed for response validation, program limits, confirmation checks, purchase timing, conflicting evidence, and malformed input. Streamlit startup and missing-model behavior were also checked. Those code checks do not prove the model's explanations are accurate. The original Gemini API workflow remains a separate historical experiment; no new live Gemini call or GPU training is claimed.
+
+The presentation has eight slides with speaker notes. Its package/layout checks passed and the rendered slides were visually reviewed. Native PowerPoint execution was not tested. Saved model weights remain separate; local inference requires the completed Milestone 3 artifact. GitHub Pages is the portfolio, not a hosted model endpoint.

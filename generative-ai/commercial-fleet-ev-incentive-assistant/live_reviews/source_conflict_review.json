@@ -1,0 +1,76 @@
+{
+  "payload": {
+    "task": "Can we send the confirmed inputs to Python for a conditional utility estimate?",
+    "customer": {
+      "location": "Omaha, NE",
+      "account_class_confirmed": true,
+      "total_project_cost": 44000.0,
+      "prior_approval": true,
+      "utility_confirmed": true,
+      "eligible_cost_confirmed": true,
+      "ports_confirmed": true,
+      "purchased": false,
+      "account_class": "nonresidential",
+      "charging_ports": 16,
+      "utility": "Prairie Demonstration Utility 251",
+      "chargers": 16,
+      "eligible_project_cost": 27000.0
+    },
+    "program_evidence": [
+      {
+        "source_id": "SIM-abe018a7f5b5",
+        "program_type": "utility",
+        "utility": "Prairie Demonstration Utility 251",
+        "eligible_account_class": "nonresidential",
+        "rebate_per_port": 900,
+        "percent_limit": 0.4,
+        "maximum_rebate": 26000,
+        "prior_approval_required": true,
+        "rule_text": "Approval must come before the equipment purchase. Remaining funds are not guaranteed."
+      },
+      {
+        "source_id": "SIM-abe018a7f5b5-2",
+        "program_type": "utility",
+        "utility": "Prairie Demonstration Utility 251",
+        "eligible_account_class": "nonresidential",
+        "rebate_per_port": 1600,
+        "percent_limit": 0.4,
+        "maximum_rebate": 30000,
+        "prior_approval_required": true,
+        "rule_text": "Approval must come before the equipment purchase. Remaining funds are not guaranteed."
+      }
+    ]
+  },
+  "generation": {
+    "raw_response": "{\"decision\": \"source_conflict\", \"missing_fields\": [], \"questions\": [\"Which of these conflicting program versions is authoritative?\"], \"summary\": \"Both the rate and cap differ between sources, with no evidence identifying the authoritative version.\", \"calculation_inputs\": null, \"caveats\": [\"Any estimated amount remains conditional; available funding and an award are not guaranteed.\"], \"source_ids\": [\"SIM-abe018a7f5b5\", \"SIM-abe018a7f5b5-2\"]}",
+    "input_tokens": 855,
+    "output_tokens": 112,
+    "seconds": 3.118,
+    "hit_token_limit": false,
+    "device": "mps",
+    "model_run": "4ec6c67be487",
+    "model_manifest_sha256": "67939c7bb1d70248e023778d0cdcd60111306427473846ee3a20d2622007b196"
+  },
+  "checked": {
+    "raw_response": "{\"decision\": \"source_conflict\", \"missing_fields\": [], \"questions\": [\"Which of these conflicting program versions is authoritative?\"], \"summary\": \"Both the rate and cap differ between sources, with no evidence identifying the authoritative version.\", \"calculation_inputs\": null, \"caveats\": [\"Any estimated amount remains conditional; available funding and an award are not guaranteed.\"], \"source_ids\": [\"SIM-abe018a7f5b5\", \"SIM-abe018a7f5b5-2\"]}",
+    "response": {
+      "decision": "source_conflict",
+      "missing_fields": [],
+      "questions": [
+        "Which of these conflicting program versions is authoritative?"
+      ],
+      "summary": "Both the rate and cap differ between sources, with no evidence identifying the authoritative version.",
+      "calculation_inputs": null,
+      "caveats": [
+        "Any estimated amount remains conditional; available funding and an award are not guaranteed."
+      ],
+      "source_ids": [
+        "SIM-abe018a7f5b5",
+        "SIM-abe018a7f5b5-2"
+      ]
+    },
+    "estimate": null,
+    "validation_error": null,
+    "calculation_blocked": null
+  }
+}

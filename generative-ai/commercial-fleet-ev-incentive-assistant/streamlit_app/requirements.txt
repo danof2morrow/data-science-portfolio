@@ -1,0 +1,5 @@
+streamlit==1.51.0
+transformers==4.57.1
+accelerate==1.11.0
+torch>=2.6,<3
+safetensors>=0.4.3,<1

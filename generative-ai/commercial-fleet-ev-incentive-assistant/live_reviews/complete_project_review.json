@@ -1,0 +1,80 @@
+{
+  "payload": {
+    "task": "Can we send the confirmed inputs to Python for a conditional utility estimate?",
+    "customer": {
+      "location": "Omaha, NE",
+      "account_class_confirmed": true,
+      "total_project_cost": 44000.0,
+      "prior_approval": true,
+      "utility_confirmed": true,
+      "eligible_cost_confirmed": true,
+      "ports_confirmed": true,
+      "purchased": false,
+      "account_class": "nonresidential",
+      "charging_ports": 16,
+      "utility": "Prairie Demonstration Utility 251",
+      "chargers": 16,
+      "eligible_project_cost": 27000.0
+    },
+    "program_evidence": [
+      {
+        "source_id": "SIM-a456e7060a50",
+        "program_type": "utility",
+        "utility": "Prairie Demonstration Utility 251",
+        "eligible_account_class": "nonresidential",
+        "rebate_per_port": 900,
+        "percent_limit": 0.4,
+        "maximum_rebate": 26000,
+        "prior_approval_required": true,
+        "rule_text": "Approval must come before the equipment purchase. Remaining funds are not guaranteed."
+      }
+    ]
+  },
+  "generation": {
+    "raw_response": "{\"decision\": \"ready_for_calculation\", \"missing_fields\": [], \"questions\": [], \"summary\": \"The project inputs and approval are confirmed. Unknown remaining funding limits the estimate, but does not block the conditional calculation.\", \"calculation_inputs\": {\"charging_ports\": 16, \"rebate_per_port\": 900, \"eligible_project_cost\": 27000.0, \"percent_limit\": 0.4, \"maximum_rebate\": 26000}, \"caveats\": [\"Any estimated amount remains conditional; available funding and an award are not guaranteed.\"], \"source_ids\": [\"SIM-a456e7060a50\"]}",
+    "input_tokens": 744,
+    "output_tokens": 146,
+    "seconds": 4.23,
+    "hit_token_limit": false,
+    "device": "mps",
+    "model_run": "4ec6c67be487",
+    "model_manifest_sha256": "67939c7bb1d70248e023778d0cdcd60111306427473846ee3a20d2622007b196"
+  },
+  "checked": {
+    "raw_response": "{\"decision\": \"ready_for_calculation\", \"missing_fields\": [], \"questions\": [], \"summary\": \"The project inputs and approval are confirmed. Unknown remaining funding limits the estimate, but does not block the conditional calculation.\", \"calculation_inputs\": {\"charging_ports\": 16, \"rebate_per_port\": 900, \"eligible_project_cost\": 27000.0, \"percent_limit\": 0.4, \"maximum_rebate\": 26000}, \"caveats\": [\"Any estimated amount remains conditional; available funding and an award are not guaranteed.\"], \"source_ids\": [\"SIM-a456e7060a50\"]}",
+    "response": {
+      "decision": "ready_for_calculation",
+      "missing_fields": [],
+      "questions": [],
+      "summary": "The project inputs and approval are confirmed. Unknown remaining funding limits the estimate, but does not block the conditional calculation.",
+      "calculation_inputs": {
+        "charging_ports": 16,
+        "rebate_per_port": 900,
+        "eligible_project_cost": 27000.0,
+        "percent_limit": 0.4,
+        "maximum_rebate": 26000
+      },
+      "caveats": [
+        "Any estimated amount remains conditional; available funding and an award are not guaranteed."
+      ],
+      "source_ids": [
+        "SIM-a456e7060a50"
+      ]
+    },
+    "estimate": {
+      "conditional_estimate": 10800.0,
+      "currency": "USD",
+      "limits": {
+        "Per-port limit": 14400.0,
+        "Eligible-cost limit": 10800.0,
+        "Program cap": 26000.0
+      },
+      "binding_limits": [
+        "Eligible-cost limit"
+      ],
+      "guaranteed_award": false
+    },
+    "validation_error": null,
+    "calculation_blocked": null
+  }
+}
