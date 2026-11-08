@@ -2,115 +2,118 @@
 
 Dan Morrow · Bellevue University · DSC670 final project
 
-This Streamlit prototype reviews a fictional fleet charging project against supplied
-program evidence. It uses the full Qwen model fine-tuned in Milestone 3 to explain
-the next step and prepare calculation inputs. Python independently checks those
-inputs and applies the program formula. The application does not discover current
-incentives, establish eligibility, or guarantee an award.
+The application uses the fully fine-tuned Qwen model saved in Milestone 3. Its
+default workflow reviews fictional fleet customers against the official DTE
+eFleet Level 2 program. The earlier fictional program cases remain available in
+the sidebar for comparison.
+
+## Official program scope
+
+The [DTE program page](https://www.dteenergy.com/us/en/business/service-request/pev/efleet-charger-rebate.html)
+and its linked [eFleet Charger Rebate Agreement](https://www.dteenergy.com/content/dam/dteenergy/deg/website/business/service-request/pev/efleet-charger-rebate/eFleetChargerRebateAgreement.pdf)
+were reviewed November 8, 2026. The agreement is revised September 2026.
+`official_program.py` contains the dated, paraphrased rules snapshot. The source
+receipt records the reviewed document URLs and hashes; the program websites can
+change after this review.
+
+For Level 2, the published maximum is $2,500 per port. Electric Choice customers
+receive 35% of that established amount, or $875 per port. DTE sets site and
+participant limits at its discretion. This workflow therefore reports a
+**published per-port ceiling before DTE caps and review**, rather than an approved
+rebate or complete award estimate. It does not invent a cost-percentage limit,
+a fixed site cap, or a universal approval-before-purchase condition.
+
+The intake covers the DTE account and service territory, site rights, qualifying
+vehicles, equipment, ongoing commitments, the meter/network alternative,
+applicable grid requirements, confirmed ports, Electric Choice status, and
+review of the full agreement and documentation obligations. These are supplied
+planning facts, not independent utility verification. Final documentation,
+compliance, funding, caps, and award review remain with DTE.
+
+The model sees the facts and reviewed evidence. Python independently checks the
+planning requirements and compares the proposed handoff with those facts before
+multiplying ports by the applicable published rate. The original model response
+stays visible when it is incorrect. The app does not search for other programs,
+verify funding, determine real-world eligibility, or submit applications.
 
 ## Run locally
 
-Use Python 3.11 or 3.12 in a separate environment. From this app folder:
+Use the existing `dsc670_app` environment, or a separate Python 3.11 environment.
+From this folder:
 
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
 python -m pip install -r requirements.txt
 python -m streamlit run app.py
 ```
 
-The app opens at `http://localhost:8501`. It can display the project form without
-the model, but reviews remain disabled until the saved fine-tuned model loads.
-The original base model is never downloaded as a substitute.
+The interface opens at `http://localhost:8501`. Select the saved `full_model`
+folder in the sidebar and load it. Model reviews stay disabled until it loads.
+No pretrained-model substitute is downloaded.
 
-## Connect the trained model
+## Saved model
 
-Milestone 3 saved this file in Google Drive:
+Use the completed artifact from run `4ec6c67be487`. Keep these together:
 
-`DSC670_Milestone3_Full_Fine_Tuning/4ec6c67be487/DSC670_Milestone3_Complete_4ec6c67be487.zip`
-
-Download and extract that existing ZIP. Keep its folders together:
-
-- `full_model/`: the saved model weights, tokenizer, and configuration
-- `reports/recipe.json`: the original model and training instructions
-- `model_manifest.json`: recorded sizes and hashes for the saved model files
-- `training_complete.json`: the training-completion record
-
-In the app sidebar, enter the path to the extracted `full_model` folder and choose
-**Load saved model**. Alternatively, set the `DSC670_MODEL_DIR` environment
-variable to that folder before starting the app. Keep the rest of the extracted
-run beside it. Merely renaming a base-model folder will not pass verification.
-
-The source package does not include the roughly 2 GB of trained weights. The
-notebook contains their saving code and evaluation results, rather than embedding
-the weights themselves. No additional training is needed when that ZIP is intact.
-
-Automatic device selection uses CUDA, Apple MPS, or CPU in that order. Inference
-can run on a computer without the T4 used for training, provided there is enough
-memory. CPU generation can take longer. Select CPU explicitly if MPS is
-unavailable or unsupported. The app retains the notebook's float32 model loading,
-greedy decoding, and 384-token output limit.
-
-## Demonstration workflow
-
-Choose an example, review its project facts and evidence, and submit it to the
-loaded model. Useful examples include a complete utility project, a missing port
-count, unconfirmed eligible costs, and conflicting program sources. Example
-projects come from the submitted notebook's fictional test scenarios. The model
-receives only their inputs, never their authored target answers.
-
-The result separates the model's proposed decision from Python's acceptance or
-rejection of a calculation. An accepted estimate is the minimum of the per-port
-allowance, eligible-cost percentage, and program cap. Raw JSON, source IDs,
-request timing, and the submitted facts are available for inspection. Results
-refer to the last submitted request, rather than unsent form changes.
-
-No customer information is sent to a hosted model API. Requests remain in the
-current Streamlit session unless the user downloads a review. This is a course
-prototype using fictional data, not a deployed service with authentication or
-production privacy controls. Run it locally and do not expose the port publicly.
-
-## Recorded model evaluation
-
-The submitted Milestone 3 notebook reported 25/28 strict checks, 26/28 correct
-decisions, and usable inputs for all 8 complete calculation cases after training.
-There was still one incorrect ready decision, and manual review found explanation
-errors that structured checks did not catch. These are historical notebook
-results, not a new accuracy claim for arbitrary app inputs.
-
-## Code checks
-
-```bash
-python -m unittest -v test_incentive_logic.py
+```text
+completed_training_run/
+    full_model/
+    reports/recipe.json
+    model_manifest.json
+    training_complete.json
 ```
 
-These tests check program limits and failure handling using authored examples.
-They do not evaluate the fine-tuned model. Live inference and screenshots require
-the actual saved artifact.
+The source package does not contain the approximately 2 GB model. The application
+verifies its file hashes, manifest fingerprint, and training recipe. Existing
+weights are reused; no training is performed by the app. Device selection uses
+CUDA, Apple MPS, or CPU in that order.
+
+The training prompt and weights are unchanged. Official-program mode uses a
+separately versioned inference prompt to apply the real evidence and permit null
+values for the three unsupported cost/cap fields. Each live review records the
+training run, manifest, inference prompt, and rules-snapshot identities.
+
+## Evaluation
+
+The historical synthetic notebook recorded 25/28 strict checks and 26/28 correct
+decisions. These are not DTE-program performance results.
+
+On **Run example checks**, select **Run all six examples** after loading the model.
+The app runs complete, incomplete, Electric Choice, and wrong-utility cases and
+exports `official_program_live_checks.json`. Authored expected answers are used
+only after generation. They are not model inputs. The report preserves model
+errors, calculation blocks, timing, tokens, and provenance. Six demonstration
+cases do not establish independent real-world accuracy. Explanations need manual
+review even when structured checks pass.
+
+The same live checks can be run from the terminal:
+
+```bash
+python official_checks.py --model-dir "/path/to/completed_training_run/full_model"
+```
+
+Rule and failure-handling tests can be run without the model:
+
+```bash
+python -m unittest -v test_incentive_logic.py test_official_program.py
+```
+
+These tests use explicit authored fixtures. They do not measure model performance.
 
 ## Files
 
-- `app.py`: Streamlit form, results, source evidence, and evaluation display
-- `model_runtime.py`: saved-model verification, local loading, and generation
-- `incentive_logic.py`: response validation and independent calculator
-- `training_contract.py`: the exact system prompt and expected training identity
-- `example_cases.py`: the notebook's fictional scenario generator
-- `test_incentive_logic.py`: calculator and response-validation checks
+- `app.py`: Streamlit entry point and shared result display.
+- `official_ui.py`: official-program intake, source view, and live test controls.
+- `official_program.py`: dated rules, inference prompt, and fictional cases.
+- `official_checks.py`: live-model checks and downloadable report.
+- `incentive_logic.py`: strict response parsing and independent calculations.
+- `model_runtime.py`: saved-artifact verification and local generation.
+- `training_contract.py`: unchanged training prompt and run identity.
+- `example_cases.py`: retained fictional scenario generator.
+- `test_incentive_logic.py`, `test_official_program.py`: code-level checks.
 
-## Live application results
+## Data and privacy
 
-The accompanying screenshots and downloaded JSON reviews show the saved model
-running on Apple MPS. The complete project produced a conditional $10,800
-estimate. In the unconfirmed-cost case, the model incorrectly proposed a
-calculation, and Python blocked it. The conflicting-source case returned no
-calculation inputs and asked which program version was authoritative.
-
-These three examples demonstrate the application workflow using fictional
-scenarios from the notebook. They are not an independent accuracy evaluation.
-
-## Technical references
-
-- [Streamlit caching](https://docs.streamlit.io/develop/concepts/architecture/caching)
-- [Hugging Face model loading](https://huggingface.co/docs/transformers/v4.57.1/main_classes/model)
-
-The model results and example data come from the submitted Milestone 3 notebook.
+Use fictional customer information for the course demonstration. Inference uses
+local model files, and customer entries remain in the current Streamlit session
+unless a review is downloaded. There is no hosted model API call, authentication,
+or production privacy control. The app is intended for local use.

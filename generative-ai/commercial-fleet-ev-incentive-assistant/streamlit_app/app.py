@@ -65,27 +65,33 @@ def render_result(review, view_key):
         return
     generation = review['generation']
     checked = review['checked']
+    official = 'planning_checks' in checked
     st.caption('Results for the most recently submitted project facts')
     if checked['validation_error']:
         st.error('The model\'s response could not be accepted. No estimate was calculated.')
         st.write(checked['validation_error'])
     else:
         response = checked['response']
-        st.subheader(STATUS[response['decision']])
+        st.subheader('Model proposes a per-port ceiling' if official and response['decision'] == 'ready_for_calculation' else STATUS[response['decision']])
         st.write(response['summary'])
         if checked['calculation_blocked']:
             st.error('Python blocked the proposed calculation.')
             st.write(checked['calculation_blocked'])
         if checked['estimate']:
             estimate = checked['estimate']
-            st.metric('Conditional incentive estimate', f"${estimate['conditional_estimate']:,.2f}")
-            st.caption('Illustrative program only. Funding, eligibility, and an award are not guaranteed.')
-            st.dataframe(
-                [{'Limit': name, 'Amount (USD)': f'${amount:,.2f}'}
-                 for name, amount in estimate['limits'].items()],
-                hide_index=True, width='stretch',
-            )
-            st.write('The estimate uses the lowest of the per-port allowance, eligible-cost percentage, and program cap.')
+            if estimate.get('kind') == 'published_per_port_ceiling':
+                st.metric('Published per-port ceiling — before DTE caps and review', f"${estimate['conditional_estimate']:,.2f}")
+                st.write(f"{estimate['charging_ports']} confirmed ports × ${estimate['rebate_per_port']:,.2f} per port.")
+                st.warning(estimate['explanation'])
+            else:
+                st.metric('Conditional incentive estimate', f"${estimate['conditional_estimate']:,.2f}")
+                st.caption('Illustrative program only. Funding, eligibility, and an award are not guaranteed.')
+                st.dataframe(
+                    [{'Limit': name, 'Amount (USD)': f'${amount:,.2f}'}
+                     for name, amount in estimate['limits'].items()],
+                    hide_index=True, width='stretch',
+                )
+                st.write('The estimate uses the lowest of the per-port allowance, eligible-cost percentage, and program cap.')
         if response['questions']:
             st.markdown('**Questions to resolve**')
             for question in response['questions']:
@@ -98,6 +104,18 @@ def render_result(review, view_key):
                 st.write('• ' + caveat)
         st.caption('Source IDs: ' + ', '.join(response['source_ids']))
         st.warning('Review the explanation against the supplied evidence. Passing the field checks does not prove every sentence is accurate.')
+    if official:
+        unresolved = [r for r in checked['planning_checks'] if r['status'] != 'confirmed']
+        if unresolved:
+            st.markdown('**Independent Python check: facts still to resolve**')
+            for row in unresolved:
+                st.write(f"• {row['requirement']}: {row['status']}")
+        else:
+            st.caption('Independent Python check: the supplied planning facts are complete. Final DTE approval and discretionary caps remain unresolved.')
+        if checked.get('model_decision_matches_checks') is False:
+            st.error('The model’s decision differs from the independent planning checks. The original model answer is retained below.')
+        with st.expander('Independent planning checklist'):
+            st.dataframe(checked['planning_checks'], hide_index=True, width='stretch')
     left, center, right = st.columns(3)
     left.metric('Response time', f"{generation['seconds']:.2f} s")
     center.metric('Input tokens', generation['input_tokens'])
@@ -117,6 +135,7 @@ def render_result(review, view_key):
 with st.sidebar:
     st.title('Fleet Incentives')
     st.caption('Dan Morrow · DSC670 final project')
+    review_mode = st.selectbox('Review mode', ['Official DTE eFleet program', 'Fictional training examples'])
     st.markdown('### Saved model')
     model_folder = st.text_input('Full model folder', value=find_model_folder())
     device_choice = st.selectbox('Inference device', ['auto', 'cpu', 'mps', 'cuda'])
@@ -140,8 +159,13 @@ with st.sidebar:
         st.info('Load the saved Milestone 3 model to enable reviews.')
     st.divider()
     st.markdown('### Prototype scope')
-    st.write('Fictional commercial charging projects and program rules. No current incentive search or guaranteed eligibility.')
+    st.write('A dated official DTE eFleet rules snapshot, plus the earlier fictional examples. No live incentive search, funding check, or guaranteed eligibility.')
     st.caption('Customer entries remain in the current app session. Model inference uses local files.')
+
+if review_mode == 'Official DTE eFleet program':
+    from official_ui import render_official
+    render_official(runtime, model_ready, render_result)
+    st.stop()
 
 st.caption('COMMERCIAL FLEET CHARGING')
 st.title('Incentive review, with the missing facts visible')

@@ -67,7 +67,7 @@ def validate_payload(payload):
     return payload
 
 
-def parse_response(text):
+def parse_response(text, official=False):
     # Keep malformed answers visible instead of silently repairing the model's JSON.
     obj = strict_json(text)
     if not isinstance(obj, dict) or set(obj) != RESPONSE_KEYS:
@@ -81,8 +81,13 @@ def parse_response(text):
             raise ValueError(f'{name} must be a list of text values.')
     inputs = obj['calculation_inputs']
     if inputs is not None:
-        if (not isinstance(inputs, dict) or set(inputs) != INPUT_KEYS
-                or not all(valid_number(v) for v in inputs.values())):
+        if (not isinstance(inputs, dict) or set(inputs) != INPUT_KEYS):
+            raise ValueError('The model returned invalid calculation inputs.')
+        if official:
+            if (not all(valid_number(inputs[k]) for k in ['charging_ports', 'rebate_per_port'])
+                    or any(inputs[k] is not None for k in ['eligible_project_cost', 'percent_limit', 'maximum_rebate'])):
+                raise ValueError('DTE requires a port count and rate; the three unsupported cost/cap fields must be null.')
+        elif not all(valid_number(v) for v in inputs.values()):
             raise ValueError('The model returned invalid calculation inputs.')
     if obj['decision'] != 'ready_for_calculation' and inputs is not None:
         raise ValueError('A response that is not ready cannot include calculation inputs.')
@@ -145,21 +150,61 @@ def guarded_estimate(payload, response):
     }
 
 
+def official_ceiling(payload, response):
+    """Calculate only the published DTE per-port ceiling, without invented caps."""
+    from official_program import (PROGRAM_ID, SNAPSHOT_SHA256, evidence_for,
+                                  expected_planning_decision)
+    customer, records = payload['customer'], payload['program_evidence']
+    if len(records) != 1 or records[0] != evidence_for(customer):
+        raise ValueError('The supplied DTE record does not match the reviewed program snapshot.')
+    if expected_planning_decision(payload) != 'ready_for_calculation':
+        raise ValueError('A required planning fact is missing or does not meet the supplied rules. See the independent checklist.')
+    expected = {'charging_ports': customer['charging_ports'],
+                'rebate_per_port': records[0]['rebate_per_port'],
+                'eligible_project_cost': None, 'percent_limit': None, 'maximum_rebate': None}
+    if (response['decision'] != 'ready_for_calculation'
+            or response['missing_fields'] or response['questions']
+            or response['source_ids'] != [PROGRAM_ID]
+            or response.get('calculation_inputs') != expected):
+        raise ValueError('The model handoff does not match the confirmed DTE planning facts.')
+    if not response['caveats']:
+        raise ValueError('The model omitted the conditional-award caveat.')
+    amount = Decimal(str(expected['charging_ports'])) * Decimal(str(expected['rebate_per_port']))
+    return {
+        'conditional_estimate': float(amount.quantize(Decimal('.01'))),
+        'currency': 'USD', 'kind': 'published_per_port_ceiling',
+        'guaranteed_award': False, 'final_eligibility_verified': False,
+        'site_and_participant_caps_known': False,
+        'charging_ports': expected['charging_ports'],
+        'rebate_per_port': expected['rebate_per_port'],
+        'electric_choice_customer': customer['electric_choice_customer'],
+        'source_id': PROGRAM_ID, 'rules_snapshot_sha256': SNAPSHOT_SHA256,
+        'explanation': 'This is the published per-port upper bound only. DTE discretionary site/participant caps, compliance, documents and available funding can reduce it or prevent an award.',
+    }
+
+
 def review_generated_answer(payload, raw_text, hit_token_limit=False):
     """Keep the model's answer separate from the independent calculation check."""
     result = {'raw_response': raw_text, 'response': None, 'estimate': None,
               'validation_error': None, 'calculation_blocked': None}
+    from official_program import PROGRAM_ID, official_checklist, expected_planning_decision
+    official = any(p.get('source_id') == PROGRAM_ID for p in payload['program_evidence'])
+    if official:
+        result['planning_checks'] = official_checklist(payload['customer'])
+        result['independent_planning_decision'] = expected_planning_decision(payload)
     try:
         if hit_token_limit:
             raise ValueError('The response reached its output limit and may be incomplete.')
-        response = parse_response(raw_text)
+        response = parse_response(raw_text, official=official)
         actual_sources = sorted(p['source_id'] for p in payload['program_evidence'])
         if sorted(response['source_ids']) != actual_sources:
             raise ValueError('The model\'s source IDs do not match the supplied evidence.')
         result['response'] = response
+        if official:
+            result['model_decision_matches_checks'] = response['decision'] == result['independent_planning_decision']
         if response['decision'] == 'ready_for_calculation':
             try:
-                result['estimate'] = guarded_estimate(payload, response)
+                result['estimate'] = official_ceiling(payload, response) if official else guarded_estimate(payload, response)
             except (ValueError, TypeError, KeyError) as error:
                 result['calculation_blocked'] = str(error)
     except (ValueError, TypeError, KeyError) as error:

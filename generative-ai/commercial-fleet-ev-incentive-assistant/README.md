@@ -4,7 +4,17 @@
 
 Fleet charging incentive information is scattered, eligibility depends on customer and project details, and a plausible estimate can be misleading when required information is missing. This prototype explores an assistant that asks for clarification, follows supplied program rules, and passes confirmed inputs to Python for calculations.
 
-## Running Streamlit Application
+## Official DTE eFleet Program
+
+The [Streamlit application](streamlit_app/README.md) now includes a dated official-program mode for DTE eFleet Level 2 charging. The linked agreement is revised September 2026; its program page and agreement were reviewed November 8, 2026. [Source URLs and document hashes](streamlit_app/source_review/receipt.json) and the [rules snapshot](streamlit_app/source_review/program_snapshot.json) document that review.
+
+The intake and independent Python checks cover the actual planning requirements. The calculation reports a published per-port ceiling before DTE discretionary caps and compliance review. It uses up to $2,500 per port, or $875 for Electric Choice customers. It does not apply the fictional cost-percentage limit, fixed cap, or assumed purchase-approval rule. Customer examples remain fictional.
+
+The saved fine-tuned model is unchanged. A separately versioned inference prompt supplies the official rules and makes unsupported cost/cap inputs null. Twenty-one rule/validation tests passed, including the retained fictional checks. Streamlit startup and result handling were tested with explicit fixtures. **Live saved-model evaluation of the official cases is pending.** The six-case test controls record the actual raw responses, decisions, calculations, prompt/rules identities, and model provenance when run locally. No new model-performance result is claimed here.
+
+[Download the updated Streamlit source](commercial_fleet_ev_incentive_assistant_streamlit_source.zip). Load the saved model, open **Run example checks**, and run all six examples. The historical screenshots, exported reviews, and presentation below still describe the earlier fictional-program demonstration; they are not evidence of the official-program results.
+
+## Earlier Fictional-Program Application
 
 The application uses the fully fine-tuned Qwen model saved in run `4ec6c67be487`.
 It reviews the submitted customer facts and program evidence, returns a structured
@@ -21,7 +31,7 @@ Streamlit. The saved weights are separate from the repository and are required
 for inference. The app verifies the completed model artifact and does not
 substitute the pretrained model.
 
-## Live Application Results
+## Earlier Fictional-Program Live Results
 
 These examples ran on my Mac using Apple MPS with the saved fine-tuned model.
 They reuse the notebook's fictional scenario generator and are demonstration
@@ -117,4 +127,5 @@ For this portfolio, a supplied API key is a setup requirement rather than unfini
 4. Mount your own Google Drive when prompted. The notebook verifies storage before training, saves model weights/results there, and can reuse a matching completed run.
 
 The [review record](fine_tuning_review.json) confirms syntax checks and retained run evidence. Fresh GPU training was not repeated in the CPU review environment. The original notebook is unchanged.
+
 

@@ -80,8 +80,12 @@ class LocalModel:
 
     def generate(self, payload):
         import torch
+        from official_program import (PROGRAM_ID, OFFICIAL_SYSTEM_PROMPT,
+                                      OFFICIAL_PROMPT_VERSION, SNAPSHOT_SHA256)
+        official = any(p.get('source_id') == PROGRAM_ID for p in payload.get('program_evidence', []))
+        system_prompt = OFFICIAL_SYSTEM_PROMPT if official else SYSTEM_PROMPT
         messages = [
-            {'role': 'system', 'content': SYSTEM_PROMPT},
+            {'role': 'system', 'content': system_prompt},
             {'role': 'user', 'content': json.dumps(payload, ensure_ascii=False)},
         ]
         with self.lock:
@@ -117,6 +121,9 @@ class LocalModel:
                 'hit_token_limit': len(generated) >= MAX_NEW_TOKENS and not stopped,
                 'device': self.device, 'model_run': self.provenance['run_id'],
                 'model_manifest_sha256': self.provenance['manifest_sha256'],
+                'inference_prompt_version': OFFICIAL_PROMPT_VERSION if official else 'original-training-prompt',
+                'inference_prompt_sha256': hashlib.sha256(system_prompt.encode()).hexdigest(),
+                'rules_snapshot_sha256': SNAPSHOT_SHA256 if official else None,
             }
 
 

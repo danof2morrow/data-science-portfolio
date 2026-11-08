@@ -1,0 +1,16 @@
+[
+  {
+    "source": "agreement",
+    "url": "https://www.dteenergy.com/content/dam/dteenergy/deg/website/business/service-request/pev/efleet-charger-rebate/eFleetChargerRebateAgreement.pdf",
+    "reviewed_on": "2026-11-08",
+    "bytes": 246206,
+    "sha256": "8cb845a639bf12e2e09500e2617aaf3143813afb47f47e7bb8ab33642f7f3b26"
+  },
+  {
+    "source": "program_page",
+    "url": "https://www.dteenergy.com/us/en/business/service-request/pev/efleet-charger-rebate.html",
+    "reviewed_on": "2026-11-08",
+    "bytes": 608480,
+    "sha256": "5d507db1b5b1dd340048092b631fab2f2893b238bb776169c0b946556ca96bec"
+  }
+]
