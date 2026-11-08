@@ -99,6 +99,21 @@ python -m unittest -v test_incentive_logic.py test_official_program.py
 
 These tests use explicit authored fixtures. They do not measure model performance.
 
+## First official-program live run
+
+The first six-case run used the saved model on Mac MPS. All six responses parsed,
+but none passed the strict workflow checks and no calculation handoff was
+produced. Three decision labels matched; two of those clarifications asked about
+cost rather than the actual missing requirement. The port-confirmation question
+was relevant but did not match the exact field-name criterion. The model also
+missed a confirmed utility mismatch and added unsupported conditions.
+
+The current inference prompt adds four worked examples with different customer
+facts. It leaves the weights, rules, and six development cases unchanged. A new
+live run is required before claiming an improvement. The original prompt is
+retained in `source_review/prompt_v1.txt`; the first report and manual review are
+retained in the project repository.
+
 ## Files
 
 - `app.py`: Streamlit entry point and shared result display.

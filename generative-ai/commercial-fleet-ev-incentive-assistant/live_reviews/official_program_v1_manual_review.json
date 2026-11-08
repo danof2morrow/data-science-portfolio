@@ -1,0 +1,20 @@
+{
+  "first_official_run": "dte-efleet-planning-v1",
+  "model_run": "4ec6c67be487",
+  "valid_JSON": 6,
+  "cases": 6,
+  "decision_labels_matching": 3,
+  "strict_workflow_passes": 0,
+  "ready_handoffs": 0,
+  "mean_response_seconds": 2.5925,
+  "manual_findings": {
+    "complete": "Asked for irrelevant eligible project cost; no ceiling produced.",
+    "ports_unknown": "Relevant question about confirmed ports; exact field-name criterion marked it incorrect. This is partly a scoring limitation.",
+    "meter_unknown": "Correct clarification label, but asked about cost instead of the meter/network path.",
+    "choice_unknown": "Correct clarification label, but asked about cost instead of Electric Choice status.",
+    "electric_choice": "Asked for an unsupported percentage/cap and added an unsupported time-pressure caveat.",
+    "wrong_utility": "Missed the confirmed utility mismatch and asked for cost."
+  },
+  "interpretation": "The first official-program prompt did not produce a usable workflow. A 3/6 decision-label score includes two clarifications for the wrong reason. Python did not block proposed calculations because none were proposed. No eligible cost or cap values should be invented to make this model respond.",
+  "next_check": "A versioned prompt adds four worked examples with different facts; same six development cases will be retested. This is not a new held-out accuracy study."
+}

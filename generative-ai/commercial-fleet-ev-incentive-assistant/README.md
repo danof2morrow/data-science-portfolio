@@ -10,9 +10,17 @@ The [Streamlit application](streamlit_app/README.md) now includes a dated offici
 
 The intake and independent Python checks cover the actual planning requirements. The calculation reports a published per-port ceiling before DTE discretionary caps and compliance review. It uses up to $2,500 per port, or $875 for Electric Choice customers. It does not apply the fictional cost-percentage limit, fixed cap, or assumed purchase-approval rule. Customer examples remain fictional.
 
-The saved fine-tuned model is unchanged. A separately versioned inference prompt supplies the official rules and makes unsupported cost/cap inputs null. Twenty-one rule/validation tests passed, including the retained fictional checks. Streamlit startup and result handling were tested with explicit fixtures. **Live saved-model evaluation of the official cases is pending.** The six-case test controls record the actual raw responses, decisions, calculations, prompt/rules identities, and model provenance when run locally. No new model-performance result is claimed here.
+The saved fine-tuned model is unchanged. A separately versioned inference prompt supplies the official rules and makes unsupported cost/cap inputs null. Twenty-one rule/validation tests passed, including the retained fictional checks. Streamlit startup and result handling were tested with explicit fixtures. The first live official-program run is now recorded below. The current inference prompt adds worked examples; its live retest is pending. Code-test success is separate from model performance.
 
 [Download the updated Streamlit source](commercial_fleet_ev_incentive_assistant_streamlit_source.zip). Load the saved model, open **Run example checks**, and run all six examples. The historical screenshots, exported reviews, and presentation below still describe the earlier fictional-program demonstration; they are not evidence of the official-program results.
+
+## First Official-Program Live Run
+
+The [six-case live report](live_reviews/official_program_v1_live_checks.json) used the actual saved model on Mac MPS. All six responses parsed as JSON, but the model requested clarification in every case. It matched three decision labels and passed none of the strict workflow checks. No calculation handoff was produced, including the two complete planning cases. Average response time was 2.59 seconds.
+
+Manual review found that the port-confirmation question was relevant even though the exact-field criterion rejected `charging_ports` instead of `ports_confirmed`. The other incomplete cases received the right decision label for the wrong reason: the model asked for eligible project cost instead of the meter/network arrangement or Electric Choice status. It also missed the confirmed utility mismatch. The Electric Choice explanation added an unsupported percentage/cap request and a time-pressure caveat. These are model failures, not setup or calculator failures.
+
+The [manual review](live_reviews/official_program_v1_manual_review.json) and [original inference prompt](streamlit_app/source_review/prompt_v1.txt) preserve that result. Source commit `97fc2a1a220bb14ddc41410f46f52d6d566b426d` contains the first-run evaluator and source. The four worked examples in prompt version `dte-efleet-planning-v2-few-shot` use different demonstration facts. The saved weights, official rules, and six test cases are unchanged. Retesting these same development cases is not an independent accuracy study. No improvement is claimed until the new live responses are reviewed.
 
 ## Earlier Fictional-Program Application
 
@@ -127,5 +135,6 @@ For this portfolio, a supplied API key is a setup requirement rather than unfini
 4. Mount your own Google Drive when prompted. The notebook verifies storage before training, saves model weights/results there, and can reuse a matching completed run.
 
 The [review record](fine_tuning_review.json) confirms syntax checks and retained run evidence. Fresh GPU training was not repeated in the CPU review environment. The original notebook is unchanged.
+
 
 
