@@ -1,6 +1,6 @@
 # Portfolio Validation Record
 
-Initial review October 25, 2026; incentive Streamlit evidence added November 8, 2026. All ten featured entries contain artifacts. Original code, saved outputs, reports, and presentations were preserved. The fleet suitability notebook restores four intact original cells; its previous incomplete version is archived. See [artifact provenance](file-renames.md).
+Initial review October 25, 2026; incentive Streamlit evidence updated November 9, 2026. All ten featured entries contain artifacts. Original code, saved outputs, reports, and presentations were preserved. The fleet suitability notebook restores four intact original cells; its previous incomplete version is archived. See [artifact provenance](file-renames.md).
 
 | Project | Current result | Details |
 |---|---|---|
@@ -11,7 +11,7 @@ Initial review October 25, 2026; incentive Streamlit evidence added November 8, 
 | Movie success | All 13 nonempty cells passed using recovered CSVs; 4,799 joined rows, 12 website and 44 API matches. | [Included snapshots and coverage limits](../data-wrangling/what-determines-movie-success/README.md) |
 | TextBlob/VADER sentiment | All 12 nonempty cells passed on 25,000 reviews. Saved accuracy scores and feature dimensions matched exactly. | [Verified setup and execution record](../natural-language-processing/movie-review-sentiment-analysis/README.md) |
 | Lord of the Rings RAG | All 12 runtime cells passed on CPU, including retrieval, generation, and the original interactive loop. Installation completed separately. | [Tested dependencies and execution record](../generative-ai/lord-of-the-rings-rag/README.md) |
-| EV incentive assistant | Local Streamlit app demonstrated with the saved fine-tuned model on Mac MPS. Three downloaded reviews confirm an accepted $10,800 estimate, a model error blocked by Python, and a source-conflict response. Eight calculator/validation tests passed; historical training results remain separate. | [API and Colab instructions](../generative-ai/commercial-fleet-ev-incentive-assistant/README.md) |
+| EV incentive assistant | DTE full model run 1bcf2a3b1d8e completed in Colab. Notebook outputs record 64/64 authored decision and structured checks. Actual Mac MPS and CPU runs matched 5/6 live decisions, with appropriate explanations in 4/6 cases. Twenty-one rule/response tests passed. | [Source, results and limitations](../generative-ai/commercial-fleet-ev-incentive-assistant/README.md) |
 | Fine-tuned DistilBERT | All 11 code cells passed syntax checks. Retained Colab results show 88.4% test accuracy and macro F1 0.8840; no saved exception outputs. | [Colab instructions and review record](../natural-language-processing/fine-tuned-movie-review-sentiment/README.md) |
 | Netflix content strategy | 13 slides and 14 embedded images checked; ZIP integrity and all internal relationships passed. Slide text and embedded images inspected. | [Presentation and review record](../data-visualization-storytelling/netflix-top10-content-strategy/README.md) |
 
@@ -36,12 +36,23 @@ Netflix slide text and embedded images were reviewed, but full PowerPoint/LibreO
 There are no remaining known missing-input or missing-definition blockers in the active featured analyses. This record does not claim fresh runs of the two GPU training workflows or live Gemini access.
 
 
-## Streamlit Application Evidence — November 8, 2026
+## Historical Fictional-Program Application Evidence — November 8, 2026
 
-The incentive assistant now includes its [Streamlit source](../generative-ai/commercial-fleet-ev-incentive-assistant/streamlit_app/), four actual running-application screenshots, a presentation, and three downloaded JSON reviews. The reviews identify model run `4ec6c67be487` and the same manifest fingerprint. Inference ran on Dan's Mac using MPS, not in the CPU review workspace.
+The earlier fictional-program demonstration included its [Streamlit source](../generative-ai/commercial-fleet-ev-incentive-assistant/streamlit_app/), four actual running-application screenshots, a presentation, and three downloaded JSON reviews. The reviews identify model run `4ec6c67be487` and the same manifest fingerprint. Inference ran on Dan's Mac using MPS, not in the CPU review workspace.
 
 The complete project produced a conditional $10,800 estimate. With unconfirmed eligible costs, the model incorrectly proposed a calculation; the independent Python check blocked it. Conflicting program evidence prompted an authoritative-source question and no calculation inputs. These are demonstrations using the existing fictional scenario generator, not an additional independent model accuracy test.
 
 Eight unit tests passed for response validation, program limits, confirmation checks, purchase timing, conflicting evidence, and malformed input. Streamlit startup and missing-model behavior were also checked. Those code checks do not prove the model's explanations are accurate. The original Gemini API workflow remains a separate historical experiment; no new live Gemini call or GPU training is claimed.
 
 The presentation has eight slides with speaker notes. Its package/layout checks passed and the rendered slides were visually reviewed. Native PowerPoint execution was not tested. Saved model weights remain separate; local inference requires the completed Milestone 3 artifact. GitHub Pages is the portfolio, not a hosted model endpoint.
+
+
+## Final DTE Application Evidence — November 9, 2026
+
+The [executed DTE notebook](../generative-ai/commercial-fleet-ev-incentive-assistant/commercial_fleet_ev_incentive_assistant_dte_full_fine_tuning.ipynb) records a new full fine-tuning run, `1bcf2a3b1d8e`, with 320/64/64 authored training/validation/test cases, four epochs, 160 optimizer steps and 32.3 minutes on a Tesla T4. All 494,032,768 parameters were trainable. Saved-file verification and finite-weight checks passed. The selected checkpoint subsequently generated 64/64 matching decisions and structured checks, including 24/24 ready handoffs. Validation token accuracy is a separate metric. The 64 cases comprise four project groups with 16 related variants each and share authored scenario templates with training.
+
+The actual Mac [MPS](../generative-ai/commercial-fleet-ev-incentive-assistant/evaluation/dte_live_checks_mps.json) and [CPU](../generative-ai/commercial-fleet-ev-incentive-assistant/evaluation/dte_live_checks_cpu.json) reports identify the same new model manifest, prompt and rules snapshot. The matching application verifier reproduced both reports from raw responses. CPU and MPS generated identical answer text across all six cases. Each report matched 5/6 decision labels and 5/6 structured workflows. Manual review of all six explanations found 4/6 appropriate responses. Electric Choice received an incorrect rejection that Python flagged. Different utility received the correct label with the wrong explanation, which the label comparison missed. These six cases are development examples, not a new independent accuracy sample.
+
+Three actual application screenshots match the individual downloaded JSON reviews. The complete standard case produced a $40,000 published ceiling, the missing meter/network case asked for clarification, and Electric Choice exposed an incorrect rejection. These replace the fictional examples in the current eight-slide presentation. Original model outputs remain available. Python checks supplied facts and calculation inputs but does not independently verify customer statements or every explanation.
+
+All 21 retained rule/response tests passed against the final exported source. All 13 executed notebook code cells have recorded execution counts and no saved exception outputs. The current notebook keeps the actual Colab outputs and adds a Markdown assessment of later live results without altering executable code. The DTE source snapshot documents the September 2026 agreement and its November 8 review. Full model weights stay in the separate completed bundle and are not in GitHub. This review did not repeat GPU training or model inference in the CPU workspace. GitHub Pages hosts the portfolio, not the model endpoint.

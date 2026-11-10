@@ -95,9 +95,9 @@ def render_official(runtime, model_ready, render_result):
             st.download_button('Download individual reviews', bundle_bytes(report), file_name='official_program_reviews.zip', mime='application/zip')
             st.caption('Decision scores describe six authored examples only. Review the raw explanations separately; a structured pass does not prove every sentence is correct.')
     with model:
-        st.subheader('The same fully fine-tuned model')
-        st.write('This app loads the completed Qwen2.5-0.5B-Instruct model from Milestone 3, run 4ec6c67be487. All 494,032,768 parameters were trainable. It does not download a replacement model or use a LoRA adapter.')
-        st.write('The original synthetic evaluation recorded 25/28 strict checks and 26/28 correct decisions. Those results describe the fictional training workflow, not performance on DTE requirements.')
-        st.write('Official-program mode uses a new inference prompt and a dated program snapshot. The training prompt and saved weights are unchanged. Each downloaded live review records which prompt, rules, and model were used. The example-check report records actual results for the official-program cases after they run.')
+        from training_contract import BASE_MODEL_ID, EXPECTED_RUN_ID
+        st.subheader('The fully fine-tuned DTE model')
+        st.write(f'{BASE_MODEL_ID}, trained on the official-program planning workflow. Expected run: {EXPECTED_RUN_ID}. The complete model weights were updated; no LoRA adapter was used.')
+        st.write('The training notebook records validation measurements and fresh authored test cases. Historical scores from the earlier fictional-program model do not describe this model. Review the saved report and the generated explanations together.')
         if model_ready:
             st.json(runtime.provenance)

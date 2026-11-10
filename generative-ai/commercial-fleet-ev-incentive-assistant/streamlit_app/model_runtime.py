@@ -1,4 +1,4 @@
-"""Load only the saved full model from the submitted Milestone 3 run."""
+"""Load the verified full model exported by the DTE training notebook."""
 
 from dataclasses import dataclass
 from pathlib import Path
@@ -17,6 +17,9 @@ def find_model_folder():
     configured = os.environ.get('DSC670_MODEL_DIR')
     if configured:
         return str(Path(configured).expanduser())
+    bundled = Path(__file__).resolve().parent.parent / 'full_model'
+    if bundled.is_dir():
+        return str(bundled)
     adjacent = Path(__file__).resolve().parent / 'full_model'
     if adjacent.is_dir():
         return str(adjacent)
@@ -66,7 +69,7 @@ def verify_saved_model(folder):
         raise ValueError('The saved configuration is not the expected Qwen model.')
     if (folder / 'adapter_config.json').exists():
         raise ValueError('This application requires the full model, not a LoRA adapter.')
-    return {'folder': str(folder), 'run_id': run_id, 'manifest_sha256': fingerprint,
+    return {'training_summary': json.loads((parent / 'training_complete.json').read_text()), 'folder': str(folder), 'run_id': run_id, 'manifest_sha256': fingerprint,
             'verified_files': len(manifest), 'base_model': BASE_MODEL_ID}
 
 

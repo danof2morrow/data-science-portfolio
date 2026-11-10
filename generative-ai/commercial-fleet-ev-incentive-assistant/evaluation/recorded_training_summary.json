@@ -1,0 +1,55 @@
+{
+  "source": "Executed uploaded Colab notebook outputs, cells 9 through 13.",
+  "training_record_as_printed_before_evaluation": {
+    "run_id": "1bcf2a3b1d8e",
+    "method": "full supervised fine-tuning; no LoRA",
+    "trainable_parameters": 494032768,
+    "total_parameters": 494032768,
+    "training_seconds": 1936.0911878840002,
+    "global_step": 160,
+    "epochs_completed": 4.0,
+    "best_validation_loss": 0.004974236246198416,
+    "best_checkpoint": "/content/DSC670_DTE_Work/1bcf2a3b1d8e/checkpoints/checkpoint-160",
+    "all_weights_finite": true,
+    "sampled_attention_values_changed": 4096,
+    "model_files_verified": true,
+    "peak_allocated_GPU_GiB": 9.270033359527588,
+    "peak_reserved_GPU_GiB": 14.33203125,
+    "environment": {
+      "gpu": "Tesla T4",
+      "gpu_total_GiB": 14.56317138671875,
+      "python": "3.13.16 (main, Oct  1 2026, 15:40:24) [GCC 13.3.0]",
+      "torch": "2.14.1+cu130",
+      "cuda": "13.0",
+      "transformers": "4.57.1",
+      "accelerate": "1.11.0"
+    },
+    "evaluation_status": "pending"
+  },
+  "validation_comparison": [
+    {
+      "stage": "Before",
+      "assistant_loss": 1.348316,
+      "teacher_forced_accuracy": 0.72017,
+      "perplexity": 3.850934
+    },
+    {
+      "stage": "After",
+      "assistant_loss": 0.004974,
+      "teacher_forced_accuracy": 0.998192,
+      "perplexity": 1.004987
+    }
+  ],
+  "held_out_metrics_as_printed": {
+    "test_cases": 64,
+    "valid_json": 64,
+    "correct_decisions": 64,
+    "structured_passes": 64,
+    "unsupported_ready_decisions": 0,
+    "unsupported_calculations": 0,
+    "wording_flagged_responses": 0,
+    "ready_cases": 24,
+    "accepted_ready_handoffs": 24
+  },
+  "interpretation": "Generated response results on authored synthetic cases. Validation teacher-forced token accuracy measures a different task."
+}

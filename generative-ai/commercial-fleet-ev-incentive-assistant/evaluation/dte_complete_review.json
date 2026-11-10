@@ -1,0 +1,171 @@
+{
+  "payload": {
+    "task": "Review the planning facts. Clarify what is missing or hand off inputs for the published per-port ceiling. This is not final DTE approval.",
+    "customer": {
+      "location": "Detroit, MI — fictional fleet site",
+      "utility": "DTE Electric",
+      "charging_ports": 16,
+      "electric_choice_customer": false,
+      "meter_network_path": "dedicated_meter",
+      "grid_commitment_status": "not_required_confirmed",
+      "utility_confirmed": true,
+      "account_good_standing": true,
+      "territory_confirmed": true,
+      "site_rights": true,
+      "qualifying_evs_within_24_months": true,
+      "new_level2_equipment": true,
+      "five_year_commitment": true,
+      "uptime_97_commitment": true,
+      "agreement_requirements_reviewed": true,
+      "ports_confirmed": true
+    },
+    "program_evidence": [
+      {
+        "source_id": "DTE-EFLEET-L2-2026-09",
+        "program_type": "utility",
+        "program_name": "DTE eFleet Charger Rebate — Level 2",
+        "utility": "DTE Electric",
+        "agreement_revision": "September 2026",
+        "reviewed_on": "2026-11-08",
+        "source_url": "https://www.dteenergy.com/us/en/business/service-request/pev/efleet-charger-rebate.html",
+        "agreement_url": "https://www.dteenergy.com/content/dam/dteenergy/deg/website/business/service-request/pev/efleet-charger-rebate/eFleetChargerRebateAgreement.pdf",
+        "standard_per_port_ceiling": 2500,
+        "electric_choice_multiplier": 0.35,
+        "percent_limit": null,
+        "maximum_rebate": null,
+        "rule_text": "Planning review, not award approval. DTE nonresidential account must be current and in good standing; site must be in DTE Electric territory. Operator must have site rights and qualifying on-road plug-in vehicles owned or planned within 24 months of application. New equipment, five-year ownership/maintenance, 97% uptime, and a dedicated DTE meter or qualified network provider are required. Applicable load commitments/demand ceilings and the full agreement must be addressed. Level 2 ceiling is $2500 per port; Electric Choice receives 35% of that rate. DTE controls site/participant caps and final compliance/document review; amounts and availability can change. No cost-percentage limit or fixed site cap is specified here. Do not invent either, or a universal approval-before-purchase rule.",
+        "rebate_per_port": 2500
+      }
+    ]
+  },
+  "generation": {
+    "raw_response": "{\"decision\": \"ready_for_calculation\", \"missing_fields\": [], \"questions\": [], \"summary\": \"The planning facts are confirmed. Python can calculate the published per-port ceiling.\", \"calculation_inputs\": {\"charging_ports\": 16, \"rebate_per_port\": 2500, \"eligible_project_cost\": null, \"percent_limit\": null, \"maximum_rebate\": null}, \"caveats\": [\"DTE determines site and participant caps and reviews documents, compliance, and funding. A published ceiling is not an approved award.\"], \"source_ids\": [\"DTE-EFLEET-L2-2026-09\"]}",
+    "input_tokens": 891,
+    "output_tokens": 137,
+    "seconds": 3.718,
+    "hit_token_limit": false,
+    "device": "mps",
+    "model_run": "1bcf2a3b1d8e",
+    "model_manifest_sha256": "b7db5471e05d48dd21359849ea9b08ebc337e32ce0b1f395afd938729f35fc0d",
+    "inference_prompt_version": "dte-efleet-full-sft-v1",
+    "inference_prompt_sha256": "dcf34f1dc709edb804bfb83c637b950aaeaf9728f94017e302049790864b19ad",
+    "rules_snapshot_sha256": "22e8a8c0852c795799deba54ddacecf443cf323e35bcdaea768053d7d654e4bb"
+  },
+  "checked": {
+    "raw_response": "{\"decision\": \"ready_for_calculation\", \"missing_fields\": [], \"questions\": [], \"summary\": \"The planning facts are confirmed. Python can calculate the published per-port ceiling.\", \"calculation_inputs\": {\"charging_ports\": 16, \"rebate_per_port\": 2500, \"eligible_project_cost\": null, \"percent_limit\": null, \"maximum_rebate\": null}, \"caveats\": [\"DTE determines site and participant caps and reviews documents, compliance, and funding. A published ceiling is not an approved award.\"], \"source_ids\": [\"DTE-EFLEET-L2-2026-09\"]}",
+    "response": {
+      "decision": "ready_for_calculation",
+      "missing_fields": [],
+      "questions": [],
+      "summary": "The planning facts are confirmed. Python can calculate the published per-port ceiling.",
+      "calculation_inputs": {
+        "charging_ports": 16,
+        "rebate_per_port": 2500,
+        "eligible_project_cost": null,
+        "percent_limit": null,
+        "maximum_rebate": null
+      },
+      "caveats": [
+        "DTE determines site and participant caps and reviews documents, compliance, and funding. A published ceiling is not an approved award."
+      ],
+      "source_ids": [
+        "DTE-EFLEET-L2-2026-09"
+      ]
+    },
+    "estimate": {
+      "conditional_estimate": 40000.0,
+      "currency": "USD",
+      "kind": "published_per_port_ceiling",
+      "guaranteed_award": false,
+      "final_eligibility_verified": false,
+      "site_and_participant_caps_known": false,
+      "charging_ports": 16,
+      "rebate_per_port": 2500,
+      "electric_choice_customer": false,
+      "source_id": "DTE-EFLEET-L2-2026-09",
+      "rules_snapshot_sha256": "22e8a8c0852c795799deba54ddacecf443cf323e35bcdaea768053d7d654e4bb",
+      "explanation": "This is the published per-port upper bound only. DTE discretionary site/participant caps, compliance, documents and available funding can reduce it or prevent an award."
+    },
+    "validation_error": null,
+    "calculation_blocked": null,
+    "planning_checks": [
+      {
+        "field": "utility_confirmed",
+        "requirement": "Serving utility confirmed",
+        "status": "confirmed"
+      },
+      {
+        "field": "account_good_standing",
+        "requirement": "DTE nonresidential account current and in good standing",
+        "status": "confirmed"
+      },
+      {
+        "field": "territory_confirmed",
+        "requirement": "Site confirmed in DTE Electric service territory",
+        "status": "confirmed"
+      },
+      {
+        "field": "site_rights",
+        "requirement": "Right to install, own, operate, and maintain equipment",
+        "status": "confirmed"
+      },
+      {
+        "field": "qualifying_evs_within_24_months",
+        "requirement": "Qualifying fleet EVs owned or planned within 24 months",
+        "status": "confirmed"
+      },
+      {
+        "field": "new_level2_equipment",
+        "requirement": "New Level 2 equipment",
+        "status": "confirmed"
+      },
+      {
+        "field": "five_year_commitment",
+        "requirement": "Five-year ownership, operation, and maintenance commitment",
+        "status": "confirmed"
+      },
+      {
+        "field": "uptime_97_commitment",
+        "requirement": "Commitment to 97% charger uptime",
+        "status": "confirmed"
+      },
+      {
+        "field": "agreement_requirements_reviewed",
+        "requirement": "Full agreement and documentation requirements reviewed",
+        "status": "confirmed"
+      },
+      {
+        "field": "ports_confirmed",
+        "requirement": "Charging port count confirmed",
+        "status": "confirmed"
+      },
+      {
+        "field": "utility",
+        "requirement": "Serving utility is DTE Electric",
+        "status": "confirmed"
+      },
+      {
+        "field": "charging_ports",
+        "requirement": "Positive whole-number port count",
+        "status": "confirmed"
+      },
+      {
+        "field": "electric_choice_customer",
+        "requirement": "Electric Choice status confirmed",
+        "status": "confirmed"
+      },
+      {
+        "field": "meter_network_path",
+        "requirement": "Dedicated DTE meter or qualified network provider",
+        "status": "confirmed"
+      },
+      {
+        "field": "grid_commitment_status",
+        "requirement": "Applicable DTE load/demand requirements addressed",
+        "status": "confirmed"
+      }
+    ],
+    "independent_planning_decision": "ready_for_calculation",
+    "model_decision_matches_checks": true
+  }
+}

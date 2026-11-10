@@ -135,7 +135,7 @@ def render_result(review, view_key):
 with st.sidebar:
     st.title('Fleet Incentives')
     st.caption('Dan Morrow · DSC670 final project')
-    review_mode = st.selectbox('Review mode', ['Official DTE eFleet program', 'Fictional training examples'])
+    review_mode = st.selectbox('Review mode', ['Official DTE eFleet program'])
     st.markdown('### Saved model')
     model_folder = st.text_input('Full model folder', value=find_model_folder())
     device_choice = st.selectbox('Inference device', ['auto', 'cpu', 'mps', 'cuda'])
@@ -156,10 +156,10 @@ with st.sidebar:
         st.success('Fine-tuned model loaded')
         st.caption(f'Run {runtime.provenance["run_id"]} · {runtime.device.upper()}')
     else:
-        st.info('Load the saved Milestone 3 model to enable reviews.')
+        st.info('Load the DTE model saved by the training notebook to enable reviews.')
     st.divider()
     st.markdown('### Prototype scope')
-    st.write('A dated official DTE eFleet rules snapshot, plus the earlier fictional examples. No live incentive search, funding check, or guaranteed eligibility.')
+    st.write('A dated official DTE eFleet rules snapshot with fictional customer examples. No live incentive search, funding check, or guaranteed eligibility.')
     st.caption('Customer entries remain in the current app session. Model inference uses local files.')
 
 if review_mode == 'Official DTE eFleet program':

@@ -1,0 +1,50 @@
+{
+  "model_run": "1bcf2a3b1d8e",
+  "model_manifest_sha256": "b7db5471e05d48dd21359849ea9b08ebc337e32ce0b1f395afd938729f35fc0d",
+  "review_scope": "All six live-case explanations on MPS and CPU. The devices produced identical response text. Six selected development cases are not an independent accuracy study.",
+  "correct_decision_labels": 5,
+  "structured_passes": 5,
+  "cases": 6,
+  "decisions_with_appropriate_explanations": 4,
+  "all_six_raw_responses_identical_between_devices": true,
+  "case_review": [
+    {
+      "case": "complete",
+      "appropriate_explanation": true,
+      "finding": "Correct 16-port handoff at 2500 dollars per port. Python calculated a 40000-dollar published ceiling before caps and review."
+    },
+    {
+      "case": "ports_unknown",
+      "appropriate_explanation": true,
+      "finding": "Asks to confirm the stated port count. No calculation inputs."
+    },
+    {
+      "case": "meter_unknown",
+      "appropriate_explanation": true,
+      "finding": "Asks about the dedicated DTE meter OR qualified network alternative. No calculation inputs."
+    },
+    {
+      "case": "choice_unknown",
+      "appropriate_explanation": true,
+      "finding": "Asks whether the account is an Electric Choice customer without claiming participation is required."
+    },
+    {
+      "case": "electric_choice",
+      "appropriate_explanation": false,
+      "finding": "Incorrect rejection attributes failure to the 97% uptime commitment although the supplied value is true. Python independently marks the record ready and flags decision disagreement. No model handoff or amount was produced. The reference ceiling is 14000 dollars."
+    },
+    {
+      "case": "wrong_utility",
+      "appropriate_explanation": false,
+      "finding": "Correct rejection label but explanation incorrectly blames uptime. The actual confirmed failure is a different serving utility. Matching labels alone miss this explanation error."
+    }
+  ],
+  "notebook_review_scope": "Saved outputs report 64/64 generated decision and structured checks, including 24/24 ready handoffs. The 16 displayed explanation samples were reviewed, one per family. All 64 raw test generations were not supplied as a separate report.",
+  "limitations": [
+    "Training, validation and test projects follow the same authored scenario families and response templates. The 64-case result does not establish broad real-world reliability.",
+    "The test set comprises four project groups with 16 counterfactual variants each. Those 64 cases are not 64 independent customers.",
+    "No before/after generated-answer comparison on the DTE test set is available. Validation token metrics are not full-answer accuracy.",
+    "Python checks supplied facts and calculation values. It does not verify customer claims, current funding or every sentence of generated prose.",
+    "The same errors on CPU and MPS do not identify a single causal input feature. Broader wording and combination tests remain future work."
+  ]
+}
